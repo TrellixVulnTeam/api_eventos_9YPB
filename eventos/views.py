@@ -1,18 +1,25 @@
 import requests
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 
 # Create your views here.
-def listar_eventos(request):
+def token(request):
     url = 'https://apiauth.conveniar.com.br/conveniar/api/eventos/oauth/token'
     headers = {'X-API-KEY': '7e61b6bb-6841-415f-954e-5e2ba445cc7c'}
-    r = requests.get(url, auth=('155', 'goto'), headers=headers)
+    s = requests.Session()
 
-    print(r.json())
+    r = s.get(url, auth=('155', 'goto'), headers=headers, cookies={'from-my': 'browser'})
+
+    return redirect(listar_eventos)
+
+
+def listar_eventos(request):
+    url = 'https://apieventos.conveniar.com.br/conveniar/api/eventos?pagina=1&limite=50'
+
+    r = request(url)
+    print(r.json)
 
     return render(request, 'listar_eventos.html')
-
-
 
 
 # def index(request):
