@@ -3,27 +3,47 @@ from django.shortcuts import render, redirect
 
 
 # Create your views here.
+from eventos.models import Eventos
+
+
 def token(request):
     url = 'https://apiauth.conveniar.com.br/conveniar/api/eventos/oauth/token'
     headers = {'X-API-KEY': '7e61b6bb-6841-415f-954e-5e2ba445cc7c'}
-    s = requests.Session()
+    r = requests.get(url, auth=('155', 'goto'), headers=headers)
 
-    r = s.get(url, auth=('155', 'goto'), headers=headers, cookies={'from-my': 'browser'})
+    print(r.json())
 
-    return redirect(listar_eventos)
+    return render(request, 'eventos/listar_eventos.html')
 
 
 def listar_eventos(request):
     url = 'https://apieventos.conveniar.com.br/conveniar/api/eventos?pagina=1&limite=50'
+    headers = {'X-API-KEY': '7e61b6bb-6841-415f-954e-5e2ba445cc7c'}
+    r = requests.get(url, headers=headers)
+    eventos_data = []
 
-    r = request(url)
-    print(r.json)
+    for item in range(len(r.json())):
+        data = r.json()[item]
+        eventos = {
+            'CodEvento': data['CodEvento'],
+            'NomeEvento': data['NomeEvento'],
+            'NomeConvenio': data['NomeConvenio'],
+            'Categoria': data['Categoria'],
+            'Situacao': data['Situacao'],
+            'DataInicio': data['DataInicio'],
+            'DataFim': data['DataFim'],
+            'NumeroVagas': data['NumeroVagas']
+        }
+        eventos_data.append(eventos)
 
-    return render(request, 'listar_eventos.html')
+    context = {
+        'eventos_data': eventos_data
+    }
+
+    return render(request, 'eventos/index.html', context)
 
 
-# def index(request):
-#     url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=YOUR_API_KEY'
+# url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=YOUR_API_KEY'
 #
 #     if request.method == 'POST':
 #         form = CityForm(request.POST)

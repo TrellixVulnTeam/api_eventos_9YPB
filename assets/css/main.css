@@ -1,0 +1,22 @@
+#navegacao{
+     background: #005cbf;
+ }
+
+#porta-eventos, #login, #registrar{
+    color: white;
+}
+
+#porta-eventos, #login, #registrar, #titulos, h6 {
+    font-family: 'Comfortaa', cursive;
+
+}
+
+#titulos>h6{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.card-header{
+    background: #66a7ec;
+    font-weight: bold;
+}

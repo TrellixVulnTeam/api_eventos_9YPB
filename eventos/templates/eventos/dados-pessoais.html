@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard do Portal de Eventos</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="css/dash.css">
+</head>
+
+<body>
+<div class="page-wrapper chiller-theme toggled">
+    <a id="show-sidebar" class="btn btn-sm btn-dark" href="#"><i class="fas fa-bars"></i></a>
+    <nav id="sidebar" class="sidebar-wrapper">
+        <div class="sidebar-content">
+            <div class="sidebar-brand">
+                <a href="dashboard.html">Area do Aluno</a>
+                <div id="close-sidebar">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="sidebar-header">
+                <div class="user-pic">
+                    <img class="img-responsive img-rounded" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
+                         alt="User picture">
+                </div>
+                <!--  Foto com o nome do usuario!-->
+                <div class="user-info">
+                    <span class="user-name"><strong>Usuario</strong></span>
+                    <span class="user-role" id="nomeDoAluno">Aluno</span>
+                </div>
+            </div>
+            <!-- sidebar-search  -->
+            <div class="sidebar-menu">
+                <ul>
+                    <li class="header-menu">
+                        <span>Curso, Serviços e Eventos </span>
+                    </li>
+                    <li class="sidebar-dropdown">
+                        <a href="#"><i id="icone-curso" class="fas fa-chalkboard-teacher"></i><span>Cursos</span></a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li>
+                                    <a href="#">Curso 1</a>
+                                </li>
+                                <li>
+                                    <a href="#">Curso 2</a>
+                                </li>
+                                <li>
+                                    <a href="#">Curso 3</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="sidebar-dropdown">
+                        <a href="#">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Eventos</span>
+                        </a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li>
+                                    <a href="#">Eventos 1</a>
+                                </li>
+                                <li>
+                                    <a href="#">Eventos 2</a>
+                                </li>
+                                <li>
+                                    <a href="#">Eventos 3</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="sidebar-dropdown">
+                        <a href="#">
+                            <i class="fas fa-cogs"></i>
+                            <span>Serviços</span>
+                        </a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li>
+                                    <a href="#">Serviços 1</a>
+                                </li>
+                                <li>
+                                    <a href="#">Serviços 2</a>
+                                </li>
+                                <li>
+                                    <a href="#">Serviços 3</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="header-menu"><span>Dados Pessoais</span></li>
+                    <li>
+                        <a href="dados-pessoais.html">
+                            <i class="fa fa-book"></i>
+                            <span>Dados Pessoais</span>
+                        </a>
+                    </li>
+
+                    <li class="header-menu"><span>Sistema</span></li>
+                    <li>
+                        <a href="#">
+                            <i class="far fa-bell"></i>
+                        <span>Notificação</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Sair</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- sidebar-menu  -->
+        </div>
+        <!-- sidebar-content  -->
+        <div class="sidebar-footer">
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+        </div>
+    </nav>
+    <!-- sidebar-wrapper  -->
+    <main class="page-content">
+        <div class="container-fluid">
+            <h2>Dados Pessoais</h2>
+            <hr>
+            <form>
+                <div class="form-group">
+                    <label for="inputNome">Nome Complemento</label>
+                    <input type="text" class="form-control" id="inputNome" placeholder="Nome completo">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="inputCPF">CPF</label>
+                        <input type="text" class="form-control" id="inputCPF" placeholder="CPF">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputDataNascimento">Data Nascimento</label>
+                        <input type="date" class="form-control" id="inputDataNascimento" placeholder="Data Nascimento">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputGenero">Genero</label>
+                        <select name="inputGenero" id="" class="form-control">
+                            <option selected>Escolha seu gênero</option>
+                            <option>Masculino</option>
+                            <option>Feminino</option>
+                            <option>Não quero declarar</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">Email</label>
+                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputContato">Contato</label>
+                        <input type="text" class="form-control" id="inputContato" placeholder="Contato">
+                    </div>
+                </div>
+                <h2>Endereço</h2>
+                <hr>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="inputCEP">CEP</label>
+                        <input type="text" class="form-control" id="inputCEP" placeholder="CEP">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputLogradouro">Logradouro</label>
+                        <input type="text" class="form-control" id="inputLogradouro" placeholder="Logradouro">
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="inputComplemento">Complemento</label>
+                        <input type="text" class="form-control" id="inputComplemento" placeholder="Complemento">
+                    </div>
+
+                    <div class="form-group col-md-2">
+                        <label for="inputNumero">Numero</label>
+                        <input type="text" class="form-control" id="inputNumero" placeholder="Numero">
+                    </div>
+
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="inputBairro">Bairro</label>
+                        <input type="text" class="form-control" id="inputBairro">
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="inputCidade">Cidade</label>
+                        <input type="text" class="form-control" id="inputCidade">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputState">Estados</label>
+                        <select id="inputState" class="form-control">
+                            <option selected value="default">Escolha o estado</option>
+                            <option value="estado1">...</option>
+                        </select>
+                    </div>
+                </div>
+                <hr>
+
+                <button type="submit" class="btn btn-primary">Salvar</button>
+            </form>
+        </div>
+    </main>
+</div>
+
+<script src="js/js/jquery-3.4.0.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="js/js/dash.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="api/auth.js"></script>
+<script src="api/listar-eventos.js"></script>
+<script src="api/dados_pessoais.js"></script>
+
+</body>
+
+</html>
