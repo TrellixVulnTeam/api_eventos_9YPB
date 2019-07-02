@@ -1,4 +1,18 @@
 .titulo-dados-cursos{
     text-align: left;
+}
 
+#nome-do-curso {
+    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+    font-size: 35px;
+}
+
+.jumbotron {
+    background-image: url("../../img/cabecalho-eventos.jpg");
+    width: 100%;
+    height: auto;
+}
+
+#painelNomeCurso {
+    background-color: #0b2e13 !important;
 }

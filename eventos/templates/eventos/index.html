@@ -32,7 +32,7 @@
                                         <tr>
                                             {% if evento.Situacao == "Em oferta" %}
                                                 <th scope="row">
-                                                    <a href="{% url 'dados_eventos' evento.CodEvento %}">
+                                                    <a href="{% url 'eventos_dados' evento.CodEvento%}">
                                                         <i class="fas fa-edit"></i>
                                                     </a>
                                                 </th>
@@ -53,7 +53,6 @@
                     </div>
                 </div>
             </nav>
-
         </section>
     </div>
 {% endblock %}

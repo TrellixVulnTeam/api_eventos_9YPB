@@ -1,19 +1,6 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+{% extends 'base_dash.html' %}
+{% block body %}
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dashboard do Portal de Eventos</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link rel="stylesheet" href="css/dash.css">
-</head>
-
-<body>
 <div class="page-wrapper chiller-theme toggled">
     <a id="show-sidebar" class="btn btn-sm btn-dark" href="#"><i class="fas fa-bars"></i></a>
     <nav id="sidebar" class="sidebar-wrapper">
@@ -112,7 +99,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="index.html">
+                        <a href="../eventos/index.html">
                             <i class="fas fa-sign-out-alt"></i>
                             <span>Sair</span>
                         </a>
@@ -148,17 +135,4 @@
     </main>
     <!-- page-content" -->
 </div>
-<!-- page-wrapper -->
-        <script src="js/js/jquery-3.4.0.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="js/js/dash.js"></script>
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <script src="api/auth.js"></script>
-        <script src="api/listar-eventos.js"></script>
-        <script src="api/profiler.js"></script>
-</body>
-
-</html>
+{% endblock %}
