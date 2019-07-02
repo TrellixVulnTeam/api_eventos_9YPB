@@ -16,15 +16,133 @@
 
 
 <body>
+    <div class="page-wrapper chiller-theme toggled">
+    <a id="show-sidebar" class="btn btn-sm btn-dark" href="#"><i class="fas fa-bars"></i></a>
+    <nav id="sidebar" class="sidebar-wrapper">
+        <div class="sidebar-content">
+            <div class="sidebar-brand">
+                <a href="{% url 'dashboard' %}">Area do Aluno</a>
+                <div id="close-sidebar">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="sidebar-header">
+                <div class="user-pic">
+                    <img class="img-responsive img-rounded" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
+                         alt="User picture">
+                </div>
+                <!--  Foto com o nome do usuario!-->
+                {% for usuario in usuario_data %}
+                <div class="user-info">
+                    <span class="user-name"><strong>Usuario</strong></span>
+                    <span class="user-role" id="nomeDoAluno">{{ usuario.Nome }}</span>
+                </div>
+                {% endfor %}
+            </div>
+            <!-- sidebar-search  -->
+            <div class="sidebar-menu">
+                <ul>
+                    <li class="header-menu">
+                        <span>Curso, Serviços e Eventos </span>
+                    </li>
+                    <li class="sidebar-dropdown">
+                        <a href="#"><i id="icone-curso" class="fas fa-chalkboard-teacher"></i><span>Cursos</span></a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li>
+                                    <a href="#">Curso 1</a>
+                                </li>
+                                <li>
+                                    <a href="#">Curso 2</a>
+                                </li>
+                                <li>
+                                    <a href="#">Curso 3</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="sidebar-dropdown">
+                        <a href="#">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Eventos</span>
+                        </a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li>
+                                    <a href="#">Eventos 1</a>
+                                </li>
+                                <li>
+                                    <a href="#">Eventos 2</a>
+                                </li>
+                                <li>
+                                    <a href="#">Eventos 3</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="sidebar-dropdown">
+                        <a href="#">
+                            <i class="fas fa-cogs"></i>
+                            <span>Serviços</span>
+                        </a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li>
+                                    <a href="#">Serviços 1</a>
+                                </li>
+                                <li>
+                                    <a href="#">Serviços 2</a>
+                                </li>
+                                <li>
+                                    <a href="#">Serviços 3</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="header-menu"><span>Dados Pessoais</span></li>
+                    <li>
+                        <a href="{% url 'dados_usuario' %}">
+                            <i class="fa fa-book"></i>
+                            <span>Dados Pessoais</span>
+                        </a>
+                    </li>
+
+                    <li class="header-menu"><span>Sistema</span></li>
+                    <li>
+                        <a href="#">
+                            <i class="far fa-bell"></i>
+                        <span>Notificação</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'listar_eventos' %}">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Sair</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- sidebar-menu  -->
+        </div>
+        <!-- sidebar-content  -->
+        <div class="sidebar-footer">
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+        </div>
+    </nav>
 {% block body %}
-{% endblock%}
+{% endblock %}
 
         <script src="{% static 'js/js/jquery-3.4.0.js' %}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="{% static 'js/js/dash.js' %}"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    </div>
 </body>
 </html>

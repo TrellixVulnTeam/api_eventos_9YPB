@@ -66,6 +66,11 @@ def eventos_dados(request, cod_evento):
     return render(request, 'eventos/dados-do-curso.html', context)
 
 
+def dashboard(request):
+
+    return render(request, 'usuario/dashboard.html')
+
+
 def dados_usuario(request):
     url = "https://apieventos.conveniar.com.br/conveniar/api/eventos/cadastro/usuario/pessoa"
     r = requests.get(url,
@@ -77,18 +82,18 @@ def dados_usuario(request):
 
     usuario = {
         'CodPessoaEvento': data['CodPessoaEvento'],
-        'NumRegistro': data['CodPessoaEvento'],
-        'Nome': data['CodPessoaEvento'],
-        'Cracha': data['CodPessoaEvento'],
-        'Email': data['CodPessoaEvento'],
-        'TelefoneCelular': data['CodPessoaEvento'],
-        'TelefoneCasa': data['CodPessoaEvento'],
-        'TelefoneEmpresa': data['CodPessoaEvento'],
-        'Endereco': data['CodPessoaEvento'],
-        'Bairro': data['CodPessoaEvento'],
-        'Cidade': data['CodPessoaEvento'],
-        'Estado': data['CodPessoaEvento'],
-        'Pais': data['CodPessoaEvento'],
+        'NumRegistro': data['NumRegistro'],
+        'Nome': data['Nome'],
+        'Cracha': data['Cracha'],
+        'Email': data['Email'],
+        'TelefoneCelular': data['TelefoneCelular'],
+        'TelefoneCasa': data['TelefoneCasa'],
+        'TelefoneEmpresa': data['TelefoneEmpresa'],
+        'Endereco': data['Endereco'],
+        'Bairro': data['Bairro'],
+        'Cidade': data['Cidade'],
+        'Estado': data['Estado'],
+        'Pais': data['Pais'],
     }
     usuario_data.append(usuario)
 
