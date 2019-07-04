@@ -1,13 +1,7 @@
 import requests
 from django.shortcuts import render, redirect
+from eventos import AccessToken
 
-
-# def token(request):
-#     url = 'https://apiauth.conveniar.com.br/conveniar/api/eventos/oauth/token'
-#     headers = {'X-API-KEY': '7e61b6bb-6841-415f-954e-5e2ba445cc7c'}
-#     r = requests.get(url, auth=('155', 'goto'), headers=headers)
-#
-#     return redirect('listar_eventos')
 
 def listar_eventos(request):
     url = 'https://apieventos.conveniar.com.br/conveniar/api/eventos?pagina=1&limite=50'
@@ -75,7 +69,7 @@ def dados_usuario(request):
     url = "https://apieventos.conveniar.com.br/conveniar/api/eventos/cadastro/usuario/pessoa"
     r = requests.get(url,
                      headers={
-                         'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNTUiLCJqdGkiOiJmNTFlYzgxOC05ZTZkLTRmNTAtYjBjNi02NDM4ZmRhOTgzYWUiLCJjbGllbnRBcHAiOiI5YmEzMmRiZi1mNzU1LTQ2MjQtYWM1OC01MjRlYmE3Y2U0YTkiLCJJZGVudGlmaWVyVHlwZSI6IlBvcnRhbEV2ZW50b3NBcGkiLCJyb2xlIjoiRXZlbnRvcyIsInNlcnZlciI6IkludGVybm8iLCJhdXRob3JpemVkQWNjZXNzR3JvdXAiOiI3NTY3YzUyMC0yNTA1LTRmMmMtYTdiYy1lZTVjZWU3ZDE1YzciLCJpZGVudGlmaWVyIjoiMTU1IiwiZXhwIjoxNTYyMTAzMjc3LCJpc3MiOiJodHRwczovL2FwaWF1dGguY29udmVuaWFyLmNvbS5iciIsImF1ZCI6IlBvcnRhbEV2ZW50b3NBcGkifQ.7JNsrVg5lXqEK0HpTWdpDEPdIeUpzRefShGtcueCmZc'
+                         'Authorization': AccessToken
                      })
     data = r.json()
     usuario_data = []
