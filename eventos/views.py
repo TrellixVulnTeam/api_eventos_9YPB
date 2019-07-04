@@ -1,6 +1,7 @@
 import requests
 from django.shortcuts import render, redirect
-from eventos import AccessToken
+# from eventos import AccessToken
+from usuario.forms import UsuarioLoginForm
 
 
 def listar_eventos(request):
@@ -8,6 +9,8 @@ def listar_eventos(request):
     headers = {'X-API-KEY': '7e61b6bb-6841-415f-954e-5e2ba445cc7c'}
     r = requests.get(url, headers=headers)
     eventos_data = []
+
+    form = UsuarioLoginForm()
 
     for item in range(len(r.json())):
         data = r.json()[item]
@@ -24,7 +27,8 @@ def listar_eventos(request):
         eventos_data.append(eventos)
 
     context = {
-        'eventos_data': eventos_data
+        'eventos_data': eventos_data,
+        'form': form
     }
 
     return render(request, 'eventos/index.html', context)
@@ -58,41 +62,3 @@ def eventos_dados(request, cod_evento):
     }
 
     return render(request, 'eventos/dados-do-curso.html', context)
-
-
-def dashboard(request):
-
-    return render(request, 'usuario/dashboard.html')
-
-
-def dados_usuario(request):
-    url = "https://apieventos.conveniar.com.br/conveniar/api/eventos/cadastro/usuario/pessoa"
-    r = requests.get(url,
-                     headers={
-                         'Authorization': AccessToken
-                     })
-    data = r.json()
-    usuario_data = []
-
-    usuario = {
-        'CodPessoaEvento': data['CodPessoaEvento'],
-        'NumRegistro': data['NumRegistro'],
-        'Nome': data['Nome'],
-        'Cracha': data['Cracha'],
-        'Email': data['Email'],
-        'TelefoneCelular': data['TelefoneCelular'],
-        'TelefoneCasa': data['TelefoneCasa'],
-        'TelefoneEmpresa': data['TelefoneEmpresa'],
-        'Endereco': data['Endereco'],
-        'Bairro': data['Bairro'],
-        'Cidade': data['Cidade'],
-        'Estado': data['Estado'],
-        'Pais': data['Pais'],
-    }
-    usuario_data.append(usuario)
-
-    context = {
-        'usuario_data': usuario_data
-    }
-
-    return render(request, 'usuario/dados-pessoais.html', context)

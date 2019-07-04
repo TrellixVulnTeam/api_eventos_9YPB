@@ -5,6 +5,7 @@
       <w>bairro</w>
       <w>barra</w>
       <w>bloqueado</w>
+      <w>botao</w>
       <w>carregamento</w>
       <w>categoria</w>
       <w>celular</w>
@@ -27,11 +28,13 @@
       <w>estados</w>
       <w>evento</w>
       <w>eventos</w>
+      <w>formulario</w>
       <w>horaria</w>
       <w>informacao</w>
       <w>informacoes</w>
       <w>inicio</w>
       <w>inscreve</w>
+      <w>inscrição</w>
       <w>listar</w>
       <w>nascimento</w>
       <w>navbar</w>
@@ -43,12 +46,15 @@
       <w>pessoa</w>
       <w>pessoais</w>
       <w>registro</w>
+      <w>regristo</w>
+      <w>senha</w>
       <w>sistema</w>
       <w>situacao</w>
       <w>telefone</w>
       <w>titulos</w>
       <w>toggler</w>
       <w>usuario</w>
+      <w>usuarios</w>
       <w>vagas</w>
     </words>
   </dictionary>

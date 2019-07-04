@@ -26,7 +26,7 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
         <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="/modal.html" id="login" data-toggle="modal" data-target="#modalLogin">Login <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{% url 'auth_login' %}" id="login" data-toggle="modal" data-target="#modalLogin">Login <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="registrar.html" id="registrar">Registrar-se </a>
@@ -46,22 +46,26 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="dashboard.html" class="form_login">
-                    <div class="form-group">
-                        <label for="exampleInputNRegristo">N° Registro</label>
-                        <input type="text" class="form-control" id="exampleInputNRegristo" placeholder="Numero do Registro">
-                    </div>
+                <form action="{% url 'auth_login' %}" class="form_login" method="post">
+                    {% csrf_token %}
+{#                    <div class="form-group">#}
+{#                        <label for="exampleInputNRegristo">N° Registro</label>#}
+{#                        <input type="text" class="form-control" id="exampleInputNRegristo" name="num_registro" placeholder="Numero do Registro">#}
+{#                    </div>#}
+{##}
+{#                    <div class="form-group">#}
+{#                        <label for="exampleInputSenha">Senha</label>#}
+{#                        <input type="password" name="password" class="form-control" id="exampleInputSenha" placeholder="Insira a senha">#}
+{#                    </div>#}
+                    {{ form.as_p }}
 
-                    <div class="form-group">
-                        <label for="exampleInputSenha">Senha</label>
-                        <input type="password" class="form-control" id="exampleInputSenha" placeholder="Insira a senha">
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" id="botaoLogin" >Entrar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                     </div>
                 </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" id="botaoLogin" onclick="capturarLogin()">Entrar</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-            </div>
+
         </div>
     </div>
 </div>
