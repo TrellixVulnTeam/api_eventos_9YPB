@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 import requests
 
 from usuario.models import Usuario
@@ -11,35 +11,57 @@ def login(request):
     if request.method == 'POST':
         form = UsuarioLoginForm(request.POST)
         if form.is_valid():
-            usuario = Usuario()
-            usuario.registro = form.cleaned_data['registro']
-            usuario.senha = form.cleaned_data['senha']
 
-            header = {
-                        'X-API-KEY': '7e61b6bb-6841-415f-954e-5e2ba445cc7c'
-                     }
-            r = requests.get(url, auth=(usuario.registro, usuario.senha), headers=header)
+            registro = form.cleaned_data['registro']
+            senha = form.cleaned_data['senha']
 
-            if r.status_code == 200:
-                usuario.token = r.json()['AccessToken']
+            usuario = get_object_or_404(Usuario, registro=registro)
 
-                # __REGRISTRO = usuario.registro
-                # __SENHA = usuario.senha
-                # __TOKEN = usuario.token
+            if usuario.registro == registro and senha == usuario.senha:
+                header = {
+                             'X-API-KEY': '7e61b6bb-6841-415f-954e-5e2ba445cc7c'
+                          }
 
-                usuario.save()
+                r = requests.get(url, auth=(registro, senha), headers=header)
 
-                return redirect('dashboard', usuario.registro)
+                if r.status_code == 200:
+                    usuario.token = r.json()['AccessToken']
+                    usuario.save()
+
+                q = Usuario.objects.filter(registro=usuario.registro)
+                if q:
+                    return redirect('dashboard', usuario.registro)
+            else:
+                return redirect('listar_eventos')
 
     return redirect('listar_eventos')
 
 
 def dashboard(request, registro):
 
-    usuario = Usuario.objects.filter(registro=registro)
-    print(usuario)
+    url = 'https://apieventos.conveniar.com.br/conveniar/api/eventos/usuario'
+    usuario = Usuario.objects.get(registro=registro)
 
-    return render(request, 'usuario/dashboard.html')
+    header = {
+        'Authorization': usuario.token
+    }
+
+    r = requests.get(url, headers=header)
+
+    data = r.json()
+    usuario_data = []
+
+    usuario = {
+        'Nome': data['Nome']
+    }
+
+    usuario_data.append(usuario)
+
+    context = {
+        'usuario_data': usuario_data
+    }
+
+    return render(request, 'usuario/dashboard.html', context)
 
 
 def dados_usuario(request):

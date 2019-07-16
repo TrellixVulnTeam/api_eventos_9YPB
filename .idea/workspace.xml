@@ -27,23 +27,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/api_eventos/settings.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/usuario/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="82" column="29" selection-start-line="82" selection-start-column="29" selection-end-line="82" selection-end-column="29" />
+            <state relative-caret-position="527">
+              <caret line="60" column="21" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#45#0" expanded="true" />
+                <element signature="e#179#1211#0" />
+                <element signature="e#1287#2250#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/usuario/views.py">
+        <entry file="file://$PROJECT_DIR$/usuario/templates/usuario/dashboard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="39" column="18" lean-forward="true" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
-              <folding>
-                <element signature="e#0#45#0" expanded="true" />
-              </folding>
+            <state>
+              <caret column="18" lean-forward="true" selection-start-column="18" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/usuario/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/usuario/templates/base_dash.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="177">
+              <caret line="36" column="39" lean-forward="true" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -51,8 +71,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/usuario/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="85">
+              <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -109,16 +129,17 @@
         <option value="$PROJECT_DIR$/api_eventos/urls.py" />
         <option value="$PROJECT_DIR$/eventos/templates/base.html" />
         <option value="$PROJECT_DIR$/eventos/views.py" />
-        <option value="$PROJECT_DIR$/usuario/models.py" />
         <option value="$PROJECT_DIR$/usuario/forms.py" />
         <option value="$PROJECT_DIR$/usuario/__init__.py" />
         <option value="$PROJECT_DIR$/usuario/urls.py" />
-        <option value="$PROJECT_DIR$/usuario/views.py" />
         <option value="$PROJECT_DIR$/api_eventos/settings.py" />
+        <option value="$PROJECT_DIR$/usuario/models.py" />
+        <option value="$PROJECT_DIR$/usuario/templates/base_dash.html" />
+        <option value="$PROJECT_DIR$/usuario/views.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="122" />
     <option name="width" value="1087" />
     <option name="height" value="705" />
@@ -140,7 +161,7 @@
             <path>
               <item name="api_eventos" type="b2602c69:ProjectViewProjectNode" />
               <item name="api_eventos" type="462c0819:PsiDirectoryNode" />
-              <item name="eventos" type="462c0819:PsiDirectoryNode" />
+              <item name="api_eventos" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="api_eventos" type="b2602c69:ProjectViewProjectNode" />
@@ -168,16 +189,17 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Marcos Victor\Desktop\api_eventos\eventos" />
+      <recent name="C:\Users\Marcos Victor\Desktop\api_eventos\usuario" />
+      <recent name="C:\Users\Marcos Victor\Desktop\api_eventos\usuario\templates" />
+      <recent name="C:\Users\Marcos Victor\Desktop\api_eventos\eventos\templates\usuario" />
+      <recent name="C:\Users\Marcos Victor\Desktop\api_eventos\eventos\templates\eventos" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Marcos Victor\Desktop\api_eventos\usuario" />
       <recent name="C:\Users\Marcos Victor\Desktop\api_eventos\assets" />
       <recent name="C:\Users\Marcos Victor\Desktop\api_eventos\eventos\templates\eventos" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Marcos Victor\Desktop\api_eventos\usuario\templates" />
-      <recent name="C:\Users\Marcos Victor\Desktop\api_eventos\eventos\templates\usuario" />
-      <recent name="C:\Users\Marcos Victor\Desktop\api_eventos\eventos\templates\eventos" />
-      <recent name="C:\Users\Marcos Victor\Desktop\api_eventos\eventos\templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -245,15 +267,16 @@
       <workItem from="1562853470719" duration="599000" />
       <workItem from="1562876233776" duration="930000" />
       <workItem from="1562961714030" duration="2693000" />
-      <workItem from="1563286980632" duration="9028000" />
+      <workItem from="1563286980632" duration="15743000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54068000" />
+    <option name="totallyTimeSpent" value="60783000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="1000" extended-state="7" />
+    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19902913" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -330,13 +353,6 @@
     <entry file="file://$PROJECT_DIR$/assets/css/starter-template.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/eventos/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="64" selection-start-line="5" selection-start-column="4" selection-end-line="14" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/teste.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -392,13 +408,6 @@
           <folding>
             <element signature="e#635#667#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/usuario/templates/base_dash.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="53" lean-forward="true" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="53" />
         </state>
       </provider>
     </entry>
@@ -458,13 +467,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/usuario/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="9" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/usuario/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -485,13 +487,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/usuario/templates/usuario/dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/usuario/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -505,27 +500,73 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/eventos/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="38" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventos/migrations/0001_initial.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/usuario/migrations/0001_initial.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/usuario/migrations/0003_auto_20190716_1601.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api_eventos/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="80" column="31" selection-start-line="80" selection-start-column="17" selection-end-line="80" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/usuario/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="85">
+          <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/usuario/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/env/Lib/site-packages/django/db/models/manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-339">
+          <caret line="100" column="8" selection-start-line="100" selection-start-column="8" selection-end-line="100" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/usuario/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="18" lean-forward="true" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
+        <state relative-caret-position="527">
+          <caret line="60" column="21" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="21" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
+            <element signature="e#179#1211#0" />
+            <element signature="e#1287#2250#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api_eventos/settings.py">
+    <entry file="file://$PROJECT_DIR$/usuario/templates/usuario/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="82" column="29" selection-start-line="82" selection-start-column="29" selection-end-line="82" selection-end-column="29" />
+        <state>
+          <caret column="18" lean-forward="true" selection-start-column="18" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/usuario/templates/base_dash.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="36" column="39" lean-forward="true" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
         </state>
       </provider>
     </entry>
