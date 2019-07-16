@@ -1,15 +1,8 @@
 from django.shortcuts import render, redirect
 import requests
-from requests.auth import HTTPBasicAuth
-from requests_oauthlib import OAuth2, OAuth1
 
 from usuario.models import Usuario
 from .forms import UsuarioLoginForm
-
-
-def dashboard(request):
-
-    return render(request, 'usuario/dashboard.html')
 
 
 def login(request):
@@ -28,9 +21,25 @@ def login(request):
             r = requests.get(url, auth=(usuario.registro, usuario.senha), headers=header)
 
             if r.status_code == 200:
-                return redirect('dashboard')
+                usuario.token = r.json()['AccessToken']
+
+                # __REGRISTRO = usuario.registro
+                # __SENHA = usuario.senha
+                # __TOKEN = usuario.token
+
+                usuario.save()
+
+                return redirect('dashboard', usuario.registro)
 
     return redirect('listar_eventos')
+
+
+def dashboard(request, registro):
+
+    usuario = Usuario.objects.filter(registro=registro)
+    print(usuario)
+
+    return render(request, 'usuario/dashboard.html')
 
 
 def dados_usuario(request):
