@@ -103,10 +103,12 @@
 
                     <li class="header-menu"><span>Dados Pessoais</span></li>
                     <li>
-                        <a href="{% url 'dados_usuario' %}">
+                        {% for usuario in usuario_data %}
+                        <a href="{% url 'dados_usuario' usuario.registro %}">
                             <i class="fa fa-book"></i>
                             <span>Dados Pessoais</span>
                         </a>
+                        {% endfor %}
                     </li>
 
                     <li class="header-menu"><span>Sistema</span></li>
