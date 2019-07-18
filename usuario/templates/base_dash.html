@@ -33,7 +33,7 @@
                          alt="User picture">
                 </div>
                 <!--  Foto com o nome do usuario!-->
-                {% for usuario in usuario_data %}
+                {% for usuario in usuario_data %} %}
                 <div class="user-info">
                     <span class="user-name"><strong>Usuario</strong></span>
                     <span class="user-role" id="nomeDoAluno">{{ usuario.Nome }}</span>
@@ -47,8 +47,10 @@
                         <span>Curso, Serviços e Eventos </span>
                     </li>
                     <li class="sidebar-dropdown">
-                        <a href="#"><i id="icone-curso" class="fas fa-chalkboard-teacher"></i><span>Cursos</span></a>
-                        <div class="sidebar-submenu">
+                        {% for usuario in usuario_data %}
+                        <a href="{% url 'eventos_cursos' usuario.registro %}"><i id="icone-curso" class="fas fa-chalkboard-teacher"></i><span>Cursos</span></a>
+                        {%  endfor %}
+                        <!--<div class="sidebar-submenu">
                             <ul>
                                 <li>
                                     <a href="#">Curso 1</a>
@@ -60,9 +62,9 @@
                                     <a href="#">Curso 3</a>
                                 </li>
                             </ul>
-                        </div>
+                        </div>!-->
                     </li>
-                    <li class="sidebar-dropdown">
+                    <!--<li class="sidebar-dropdown">
                         <a href="#">
                             <i class="fas fa-calendar-check"></i>
                             <span>Eventos</span>
@@ -99,7 +101,7 @@
                                 </li>
                             </ul>
                         </div>
-                    </li>
+                    </li>!-->
 
                     <li class="header-menu"><span>Dados Pessoais</span></li>
                     <li>
