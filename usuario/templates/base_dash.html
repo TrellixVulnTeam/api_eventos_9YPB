@@ -21,9 +21,9 @@
     <nav id="sidebar" class="sidebar-wrapper">
         <div class="sidebar-content">
             <div class="sidebar-brand">
-                <!--<a href="">Area do Aluno</a> !-->
-                <a href="">Area do Aluno</a>
-                <div id="close-sidebar">
+                {% for usuario in usuario_data %}
+                    <a href="{% url 'dashboard' usuario.registro %}">Area do Aluno</a>
+                {% endfor %}<div id="close-sidebar">
                     <i class="fas fa-times"></i>
                 </div>
             </div>
@@ -48,7 +48,7 @@
                     </li>
                     <li class="sidebar-dropdown">
                         {% for usuario in usuario_data %}
-                        <a href="{% url 'eventos_cursos' usuario.registro %}"><i id="icone-curso" class="fas fa-chalkboard-teacher"></i><span>Cursos</span></a>
+                        <a href="{% url 'eventos_cursos' usuario.registro %}"><i id="icone-curso" class="fas fa-chalkboard-teacher"></i><span>Todos Eventos</span></a>
                         {%  endfor %}
                         <!--<div class="sidebar-submenu">
                             <ul>

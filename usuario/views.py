@@ -38,7 +38,7 @@ def login(request):
 
 
 def dashboard(request, registro):
-
+    # Dados do usuario
     url = 'https://apieventos.conveniar.com.br/conveniar/api/eventos/usuario'
     usuario = Usuario.objects.get(registro=registro)
 
@@ -58,8 +58,32 @@ def dashboard(request, registro):
 
     usuario_data.append(usuario)
 
+    # Dados do eventos
+    url = "https://apieventos.conveniar.com.br/conveniar/api/eventos/inscricoes?pagina=1&limite=50"
+    usuario = Usuario.objects.get(registro=registro)
+
+    header = {
+        'Authorization': usuario.token
+    }
+
+    r = requests.get(url, headers=header)
+    evento_data = []
+
+    for i in range(len(r.json())):
+        data = r.json()[i]
+        evento = {
+            'codEvento': data['CodEvento'],
+            'nomeEvento': data['NomeEvento'],
+            'nomeCategoria_inscricao': data['NomeCategoriaInscricao'],
+            'nomeStatus': data['NomeStatus'],
+            'registro': data['NumeroInscricao'],
+        }
+
+        evento_data.append(evento)
+
     context = {
-        'usuario_data': usuario_data
+        'usuario_data': usuario_data,
+        'evento_data': evento_data
     }
 
     return render(request, 'usuario/dashboard.html', context)
@@ -127,9 +151,6 @@ def eventos_cursos(request, registro):
         evento_data.append(evento)
 
     url_usuario = "https://apieventos.conveniar.com.br/conveniar/api/eventos/usuario"
-    header = {
-        'Authorization': usuario.token
-    }
 
     r = requests.get(url_usuario, headers=header)
     data = r.json()
