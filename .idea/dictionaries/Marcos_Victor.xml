@@ -11,6 +11,7 @@
       <w>categoria</w>
       <w>celular</w>
       <w>cidade</w>
+      <w>codeventoinscricao</w>
       <w>codigo</w>
       <w>coisa</w>
       <w>complemento</w>
@@ -23,6 +24,7 @@
       <w>dados</w>
       <w>dentro</w>
       <w>descricao</w>
+      <w>documento</w>
       <w>documentos</w>
       <w>empresa</w>
       <w>endereco</w>
@@ -31,7 +33,10 @@
       <w>estados</w>
       <w>evento</w>
       <w>eventos</w>
+      <w>financeiro</w>
       <w>financeiros</w>
+      <w>financiero</w>
+      <w>financieros</w>
       <w>formulario</w>
       <w>foto</w>
       <w>horaria</w>
@@ -52,8 +57,11 @@
       <w>notificação</w>
       <w>numero</w>
       <w>numregistro</w>
+      <w>pagamento</w>
+      <w>pago</w>
       <w>painel</w>
       <w>pais</w>
+      <w>parcela</w>
       <w>pessoa</w>
       <w>pessoais</w>
       <w>possivel</w>
@@ -67,6 +75,7 @@
       <w>sistema</w>
       <w>situacao</w>
       <w>telefone</w>
+      <w>tipo</w>
       <w>titulos</w>
       <w>toggler</w>
       <w>usuario</w>

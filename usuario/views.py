@@ -89,43 +89,6 @@ def dashboard(request, registro):
     return render(request, 'usuario/dashboard.html', context)
 
 
-def dados_usuario(request, registro):
-    url = "https://apieventos.conveniar.com.br/conveniar/api/eventos/usuario"
-
-    usuario = Usuario.objects.get(registro=registro)
-
-    header = {
-        'Authorization': usuario.token
-    }
-
-    r = requests.get(url, headers=header)
-
-    data = r.json()
-    usuario_data = []
-
-    usuario = {
-        'registro': data['NumRegistro'],
-        'Nome': data['Nome'],
-        'Cracha': data['Cracha'],
-        'Email': data['Email'],
-        'TelefoneCelular': data['TelefoneCelular'],
-        'TelefoneCasa': data['TelefoneCasa'],
-        'TelefoneEmpresa': data['TelefoneEmpresa'],
-        'Endereco': data['Endereco'],
-        'Bairro': data['Bairro'],
-        'Cidade': data['Cidade'],
-        'Estado': data['Estado'],
-        'Pais': data['Pais'],
-    }
-    usuario_data.append(usuario)
-
-    context = {
-        'usuario_data': usuario_data
-    }
-
-    return render(request, 'usuario/dados-pessoais.html', context)
-
-
 def eventos_cursos(request, registro):
 
     url = "https://apieventos.conveniar.com.br/conveniar/api/eventos/inscricoes?pagina=1&limite=50"
@@ -142,6 +105,7 @@ def eventos_cursos(request, registro):
         data = r.json()[i]
         evento = {
             'codEvento': data['CodEvento'],
+            'CodEventoInscricao': data['CodEventoInscricao'],
             'nomeEvento': data['NomeEvento'],
             'nomeCategoria_inscricao': data['NomeCategoriaInscricao'],
             'nomeStatus': data['NomeStatus'],
@@ -179,3 +143,100 @@ def eventos_cursos(request, registro):
     }
 
     return render(request, 'usuario/lista-curso-inscrito.html', context)
+
+
+def listar_documento_financeiro(request, registro, codeventoinscricao):
+    url = "https://apieventos.conveniar.com.br/conveniar/api/eventos/inscricao/"+(str(codeventoinscricao))+"/documentos?pagina=1&limite=50"
+    usuario = Usuario.objects.get(registro=registro)
+
+    header = {
+        'Authorization': usuario.token
+    }
+
+    r = requests.get(url, headers=header)
+
+    documentos_financieros = []
+
+    for i in range(len(r.json())):
+        data = r.json()[i]
+        documentos = {
+            'CodDocumento': data['CodDocumento'],
+            'Parcela': data['Parcela'],
+            'CodEvento': data['CodEvento'],
+            'TipoDocumento': data['TipoDocumento'],
+            'DataPagamento': data['DataPagamento'],
+            'Valor': data['Valor'],
+            'ValorPago': data['ValorPago'],
+            'NomeTipoPagamento': data['NomeTipoPagamento'],
+            'NomeStatus': data['NomeStatus'],
+        }
+
+        documentos_financieros.append(documentos)
+
+    url_usuario = "https://apieventos.conveniar.com.br/conveniar/api/eventos/usuario"
+
+    r = requests.get(url_usuario, headers=header)
+    data = r.json()
+    usuario_data = []
+
+    usuario = {
+        'registro': data['NumRegistro'],
+        'Nome': data['Nome'],
+        'Cracha': data['Cracha'],
+        'Email': data['Email'],
+        'TelefoneCelular': data['TelefoneCelular'],
+        'TelefoneCasa': data['TelefoneCasa'],
+        'TelefoneEmpresa': data['TelefoneEmpresa'],
+        'Endereco': data['Endereco'],
+        'Bairro': data['Bairro'],
+        'Cidade': data['Cidade'],
+        'Estado': data['Estado'],
+        'Pais': data['Pais'],
+    }
+    usuario_data.append(usuario)
+
+    context = {
+        'usuario_data': usuario_data,
+        'documentos_financieros': documentos_financieros
+    }
+
+    return render(request, 'usuario/lista-documento-financeiro.html', context)
+
+
+def dados_usuario(request, registro):
+    url = "https://apieventos.conveniar.com.br/conveniar/api/eventos/usuario"
+
+    usuario = Usuario.objects.get(registro=registro)
+
+    header = {
+        'Authorization': usuario.token
+    }
+
+    r = requests.get(url, headers=header)
+
+    data = r.json()
+    usuario_data = []
+
+    usuario = {
+        'registro': data['NumRegistro'],
+        'Nome': data['Nome'],
+        'Cracha': data['Cracha'],
+        'Email': data['Email'],
+        'TelefoneCelular': data['TelefoneCelular'],
+        'TelefoneCasa': data['TelefoneCasa'],
+        'TelefoneEmpresa': data['TelefoneEmpresa'],
+        'Endereco': data['Endereco'],
+        'Bairro': data['Bairro'],
+        'Cidade': data['Cidade'],
+        'Estado': data['Estado'],
+        'Pais': data['Pais'],
+    }
+    usuario_data.append(usuario)
+
+    context = {
+        'usuario_data': usuario_data
+    }
+
+    return render(request, 'usuario/dados-pessoais.html', context)
+
+
