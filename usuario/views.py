@@ -89,6 +89,17 @@ def dashboard(request, registro):
     return render(request, 'usuario/dashboard.html', context)
 
 
+def cadatrar_inscrito(request):
+
+    render(request, 'eventos/registrar.html')
+
+
+
+
+
+
+
+
 def eventos_cursos(request, registro):
 
     url = "https://apieventos.conveniar.com.br/conveniar/api/eventos/inscricoes?pagina=1&limite=50"

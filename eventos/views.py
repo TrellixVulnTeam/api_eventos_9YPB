@@ -34,6 +34,11 @@ def listar_eventos(request):
     return render(request, 'eventos/index.html', context)
 
 
+def cadastro_inscrito(request):
+
+    return render(request, 'eventos/registrar.html')
+
+
 def eventos_dados(request, cod_evento):
     codigo_evento = cod_evento
     url = 'https://apieventos.conveniar.com.br/conveniar/api/eventos/ids?codEventos=' + codigo_evento
@@ -43,7 +48,21 @@ def eventos_dados(request, cod_evento):
 
     eventos_data = []
 
-    evento = {
+    if data['Informacoes'] is not None:
+        evento = {
+                'CodEvento': data['CodEvento'],
+                'NomeEvento': data['NomeEvento'],
+                'NomeConvenio': data['NomeConvenio'],
+                'Categoria': data['Categoria'],
+                'Situacao': data['Situacao'],
+                'DataInicio': data['DataInicio'],
+                'DataFim': data['DataFim'],
+                'NumeroVagas': data['NumeroVagas'],
+                'DescricaoEventoInformacao': data['Informacoes']['DescricaoEventoInformacao']
+        }
+        eventos_data.append(evento)
+    else:
+        evento = {
             'CodEvento': data['CodEvento'],
             'NomeEvento': data['NomeEvento'],
             'NomeConvenio': data['NomeConvenio'],
@@ -52,10 +71,9 @@ def eventos_dados(request, cod_evento):
             'DataInicio': data['DataInicio'],
             'DataFim': data['DataFim'],
             'NumeroVagas': data['NumeroVagas'],
-            'DescricaoEventoInformacao': data['Informacoes']['DescricaoEventoInformacao']
-    }
-
-    eventos_data.append(evento)
+            # 'DescricaoEventoInformacao': data['Informacoes']['DescricaoEventoInformacao']
+        }
+        eventos_data.append(evento)
 
     context = {
         'eventos_data': eventos_data

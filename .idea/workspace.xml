@@ -28,52 +28,41 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/usuario/templates/usuario/lista-curso-inscrito.html">
+        <entry file="file://$PROJECT_DIR$/usuario/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="30" selection-end-column="14" />
+            <state relative-caret-position="85">
+              <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/usuario/templates/usuario/lista-documento-financeiro.html">
+        <entry file="file://$PROJECT_DIR$/eventos/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="32" column="55" selection-start-line="32" selection-start-column="55" selection-end-line="32" selection-end-column="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api_eventos/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="39" column="30" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/usuario/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="170" column="45" lean-forward="true" selection-start-line="162" selection-start-column="12" selection-end-line="170" selection-end-column="45" />
+            <state relative-caret-position="564">
+              <caret line="73" column="14" selection-start-line="73" selection-start-column="14" selection-end-line="73" selection-end-column="14" />
               <folding>
-                <element signature="e#179#1223#0" />
-                <element signature="e#1265#3277#0" />
-                <element signature="e#5388#5904#0" />
-                <element signature="e#4167#5082#0" />
+                <element signature="e#0#15#0" expanded="true" />
+                <element signature="e#174#1058#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/usuario/urls.py">
+        <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/dados-do-curso.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="12" column="35" lean-forward="true" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+            <state relative-caret-position="547">
+              <caret line="61" column="18" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/registrar.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="561">
+              <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -111,29 +100,31 @@
         <option value="$PROJECT_DIR$/eventos/templates/usuario/dashboard.html" />
         <option value="$PROJECT_DIR$/eventos/templates/usuario/dados-pessoais.html" />
         <option value="$PROJECT_DIR$/eventos/templates/base_dash.html" />
-        <option value="$PROJECT_DIR$/eventos/templates/eventos/dados-do-curso.html" />
         <option value="$PROJECT_DIR$/eventos/templates/eventos/index.html" />
         <option value="$PROJECT_DIR$/eventos/__init__.py" />
         <option value="$PROJECT_DIR$/api_eventos/urls.py" />
-        <option value="$PROJECT_DIR$/eventos/templates/base.html" />
-        <option value="$PROJECT_DIR$/eventos/views.py" />
-        <option value="$PROJECT_DIR$/usuario/forms.py" />
         <option value="$PROJECT_DIR$/usuario/__init__.py" />
-        <option value="$PROJECT_DIR$/usuario/models.py" />
-        <option value="$PROJECT_DIR$/eventos/urls.py" />
-        <option value="$PROJECT_DIR$/usuario/templates/usuario/dashboard.html" />
         <option value="$PROJECT_DIR$/usuario/templates/base_dash.html" />
-        <option value="$PROJECT_DIR$/usuario/urls.py" />
         <option value="$PROJECT_DIR$/usuario/templates/usuario/lista-curso-inscrito.html" />
-        <option value="$PROJECT_DIR$/usuario/views.py" />
         <option value="$PROJECT_DIR$/api_eventos/settings.py" />
         <option value="$PROJECT_DIR$/usuario/templates/usuario/lista-documento-financeiro.html" />
+        <option value="$PROJECT_DIR$/usuario/templates/usuario/dashboard.html" />
+        <option value="$PROJECT_DIR$/usuario/models.py" />
+        <option value="$PROJECT_DIR$/usuario/templates/usuario/cadastro-inscrito.html" />
+        <option value="$PROJECT_DIR$/usuario/forms.py" />
+        <option value="$PROJECT_DIR$/usuario/views.py" />
+        <option value="$PROJECT_DIR$/eventos/templates/base.html" />
+        <option value="$PROJECT_DIR$/usuario/urls.py" />
+        <option value="$PROJECT_DIR$/eventos/urls.py" />
+        <option value="$PROJECT_DIR$/eventos/templates/eventos/registrar.html" />
+        <option value="$PROJECT_DIR$/eventos/templates/eventos/dados-do-curso.html" />
+        <option value="$PROJECT_DIR$/eventos/views.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="79" />
-    <option name="y" value="295" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-6" />
+    <option name="y" value="139" />
     <option name="width" value="1087" />
     <option name="height" value="699" />
   </component>
@@ -143,7 +134,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -154,30 +144,13 @@
             <path>
               <item name="api_eventos" type="b2602c69:ProjectViewProjectNode" />
               <item name="api_eventos" type="462c0819:PsiDirectoryNode" />
-              <item name="api_eventos" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="api_eventos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="api_eventos" type="462c0819:PsiDirectoryNode" />
-              <item name="usuario" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="api_eventos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="api_eventos" type="462c0819:PsiDirectoryNode" />
-              <item name="usuario" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="api_eventos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="api_eventos" type="462c0819:PsiDirectoryNode" />
-              <item name="usuario" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="usuario" type="462c0819:PsiDirectoryNode" />
+              <item name="eventos" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -270,12 +243,13 @@
       <workItem from="1563286980632" duration="16251000" />
       <workItem from="1563378698636" duration="43000" />
       <workItem from="1563393571974" duration="2916000" />
-      <workItem from="1563468182335" duration="9143000" />
+      <workItem from="1563468182335" duration="12074000" />
+      <workItem from="1563557508566" duration="1062000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73393000" />
+    <option name="totallyTimeSpent" value="77386000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -290,7 +264,7 @@
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21521036" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21925566" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -386,19 +360,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/dados-do-curso.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="73" column="14" lean-forward="true" selection-start-line="73" selection-start-column="14" selection-end-line="73" selection-end-column="14" />
-          <folding>
-            <element signature="e#140#590#0#HTML" />
-            <element signature="e#599#2376#0#HTML" />
-            <element signature="e#2385#2723#0#HTML" />
-            <element signature="e#2728#2859#0#HTML" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/eventos/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -417,9 +378,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/modal.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/registrar.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://C:/Python/Python37/Lib/cgi.py">
@@ -458,16 +416,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/usuario/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/usuario/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -494,13 +442,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/usuario/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/env/Lib/site-packages/django/template/defaulttags.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="535">
@@ -508,61 +449,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eventos/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="85" lean-forward="true" selection-start-line="9" selection-start-column="85" selection-end-line="9" selection-end-column="85" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/usuario/templates/eventos/lista-curso-inscrito.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eventos/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-43">
-          <caret line="14" column="37" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/usuario/templates/eventos/lista-curso-inscrito.html" />
     <entry file="file://$PROJECT_DIR$/usuario/templates/usuario/dados-pessoais.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
           <caret line="93" column="11" lean-forward="true" selection-start-line="3" selection-start-column="3" selection-end-line="93" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eventos/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="56" selection-start-line="28" selection-start-column="56" selection-end-line="28" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="18" selection-start-column="18" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/usuario/templates/base_dash.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="53" selection-start-line="38" selection-start-column="53" selection-end-line="38" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/usuario/templates/usuario/dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -573,23 +464,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/usuario/urls.py">
+    <entry file="file://$PROJECT_DIR$/usuario/templates/usuario/lista-documento-financeiro.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" column="35" lean-forward="true" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+        <state relative-caret-position="153">
+          <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/usuario/views.py">
+    <entry file="file://$PROJECT_DIR$/usuario/templates/base_dash.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="170" column="45" lean-forward="true" selection-start-line="162" selection-start-column="12" selection-end-line="170" selection-end-column="45" />
-          <folding>
-            <element signature="e#179#1223#0" />
-            <element signature="e#1265#3277#0" />
-            <element signature="e#5388#5904#0" />
-            <element signature="e#4167#5082#0" />
-          </folding>
+        <state relative-caret-position="646">
+          <caret line="38" column="53" selection-start-line="38" selection-start-column="53" selection-end-line="38" selection-end-column="53" />
         </state>
       </provider>
     </entry>
@@ -600,10 +485,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/usuario/templates/usuario/lista-documento-financeiro.html">
+    <entry file="file://$PROJECT_DIR$/usuario/templates/usuario/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="32" column="55" selection-start-line="32" selection-start-column="55" selection-end-line="32" selection-end-column="55" />
+        <state relative-caret-position="51">
+          <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/usuario/templates/usuario/cadastro-inscrito.html" />
+    <entry file="file://$PROJECT_DIR$/usuario/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/usuario/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="44" lean-forward="true" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/usuario/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="78" lean-forward="true" selection-start-line="8" selection-start-column="78" selection-end-line="8" selection-end-column="78" />
+          <folding>
+            <element signature="e#1264#2532#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventos/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="55" lean-forward="true" selection-start-line="28" selection-start-column="55" selection-end-line="28" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/registrar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventos/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="28" lean-forward="true" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/usuario/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/dados-do-curso.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="547">
+          <caret line="61" column="18" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventos/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="73" column="14" selection-start-line="73" selection-start-column="14" selection-end-line="73" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#174#1058#0" />
+          </folding>
         </state>
       </provider>
     </entry>

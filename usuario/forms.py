@@ -16,3 +16,4 @@ class UsuarioLoginForm(forms.ModelForm):
             'registro': "N° do Registro",
             'password': "Senha"
         }
+

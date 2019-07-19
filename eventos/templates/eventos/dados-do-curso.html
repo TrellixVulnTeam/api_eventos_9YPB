@@ -63,6 +63,9 @@
             <div>
                 <p>Sem Informações informada</p>
             </div>
+            {% autoescape off %}
+                {{ evento.DescricaoEventoInformacao }}
+            {% endautoescape %}
         {% endif %}
         </div>
         <div class="container mb-2">

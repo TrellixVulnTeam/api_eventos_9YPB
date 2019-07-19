@@ -1,24 +1,24 @@
 {% extends 'base_dash.html' %}
 {% block body %}
     <main class="page-content">
-        <h3>Eventos atuais</h3>
+        <h3>Eventos em oferta</h3>
         <hr>
-        {% for evento in evento_data %}
-            {% if evento.nomeStatus == "Inscrito" %}
-                <div class="col">
-                    <div class="card">
-                        <div class="card text-center">
-                            <div class="card-header"><strong>{{ evento.nomeCategoria_inscricao }}</strong></div>
-                            <div class="card-body">
-                                <h5 class="card-title">{{ evento.nomeEvento }}</h5>
-                                <p class="card-text">Qualquer coisa</p>
-                                <a href="#" class="btn btn-primary"><i class="fas fa-file-invoice-dollar"></i> Documentos Financeiros</a>
-                            </div>
-                                <div class="card-footer text-success"><strong>{{ evento.nomeStatus }}</strong></div>
-                        </div>
-                    </div>
-                </div>
-            {% endif %}
-        {% endfor %}
+{#        {% for evento in evento_data %}#}
+{#            {% if evento.nomeStatus == "Inscrito" %}#}
+{#                <div class="col">#}
+{#                    <div class="card">#}
+{#                        <div class="card text-center">#}
+{#                            <div class="card-header"><strong>{{ evento.nomeCategoria_inscricao }}</strong></div>#}
+{#                            <div class="card-body">#}
+{#                                <h5 class="card-title">{{ evento.nomeEvento }}</h5>#}
+{#                                <p class="card-text">Qualquer coisa</p>#}
+{#                                <a href="#" class="btn btn-primary"><i class="fas fa-file-invoice-dollar"></i> Documentos Financeiros</a>#}
+{#                            </div>#}
+{#                                <div class="card-footer text-success"><strong>{{ evento.nomeStatus }}</strong></div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            {% endif %}#}
+{#        {% endfor %}#}
     </main>
 {% endblock %}

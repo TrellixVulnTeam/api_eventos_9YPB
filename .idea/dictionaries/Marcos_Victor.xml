@@ -6,11 +6,14 @@
       <w>barra</w>
       <w>bloqueado</w>
       <w>botao</w>
+      <w>cadastro</w>
+      <w>cadatrar</w>
       <w>carregamento</w>
       <w>casa</w>
       <w>categoria</w>
       <w>celular</w>
       <w>cidade</w>
+      <w>ciências</w>
       <w>codeventoinscricao</w>
       <w>codigo</w>
       <w>coisa</w>
@@ -39,29 +42,38 @@
       <w>financieros</w>
       <w>formulario</w>
       <w>foto</w>
+      <w>fundação</w>
       <w>horaria</w>
+      <w>humanas</w>
       <w>icone</w>
       <w>informacao</w>
       <w>informacoes</w>
+      <w>informações</w>
       <w>inicio</w>
       <w>inscreve</w>
       <w>inscricao</w>
       <w>inscrito</w>
       <w>inscrição</w>
+      <w>instituto</w>
       <w>lconf</w>
       <w>lista</w>
       <w>listar</w>
+      <w>listas</w>
       <w>nascimento</w>
       <w>navbar</w>
       <w>navegacao</w>
+      <w>nomes</w>
       <w>notificação</w>
       <w>numero</w>
       <w>numregistro</w>
+      <w>oferecidos</w>
+      <w>ofertas</w>
       <w>pagamento</w>
       <w>pago</w>
       <w>painel</w>
       <w>pais</w>
       <w>parcela</w>
+      <w>pela</w>
       <w>pessoa</w>
       <w>pessoais</w>
       <w>possivel</w>
@@ -71,9 +83,12 @@
       <w>regristo</w>
       <w>regristro</w>
       <w>senha</w>
+      <w>servivos</w>
       <w>serviços</w>
       <w>sistema</w>
       <w>situacao</w>
+      <w>sociais</w>
+      <w>solicite</w>
       <w>telefone</w>
       <w>tipo</w>
       <w>titulos</w>
@@ -81,6 +96,7 @@
       <w>usuario</w>
       <w>usuarios</w>
       <w>vagas</w>
+      <w>área</w>
     </words>
   </dictionary>
 </component>

@@ -1,26 +1,6 @@
-<!doctype html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Portal de Eventos</title>
+{% extends "base.html" %}
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
-    <!--<link rel="stylesheet" href="css/tab-navegacao/navegacao.css">!-->
-</head>
-<body>
-<!-- Inicio da barra de menu !-->
-<nav class="navbar navbar-expand-lg navbar-light" id="navegacao">
-    <a href="index.html" class="navbar-brand" id="porta-eventos">Portal de Eventos</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-</nav>
+{% block main %}
 <main>
     <div class="container">
         <div class="row">
@@ -51,9 +31,4 @@
         </div>
     </div>
 </main>
-
-<script src="js/js/jquery-3.4.0.js"></script>
-<script src="js/js/bootstrap.bundle.js"></script>
-<script src="js/js/bootstrap.min.js"></script>
-</body>
-</html>
+{% endblock %}
