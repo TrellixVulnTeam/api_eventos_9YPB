@@ -36,15 +36,28 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/usuario/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="136" column="32" selection-start-line="136" selection-start-column="32" selection-end-line="136" selection-end-column="32" />
+            <state relative-caret-position="601">
+              <caret line="88" column="42" lean-forward="true" selection-start-line="88" selection-start-column="42" selection-end-line="88" selection-end-column="42" />
               <folding>
                 <element signature="e#0#64#0" expanded="true" />
                 <element signature="e#179#1223#0" />
+                <element signature="e#4263#6050#0" />
+                <element signature="e#6095#7010#0" />
+                <element signature="e#7068#7469#0" />
+                <element signature="e#7521#7653#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/usuario/templates/usuario/dashboard.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -98,7 +111,6 @@
         <option value="$PROJECT_DIR$/usuario/templates/base_dash.html" />
         <option value="$PROJECT_DIR$/api_eventos/settings.py" />
         <option value="$PROJECT_DIR$/usuario/templates/usuario/lista-documento-financeiro.html" />
-        <option value="$PROJECT_DIR$/usuario/templates/usuario/dashboard.html" />
         <option value="$PROJECT_DIR$/usuario/templates/usuario/cadastro-inscrito.html" />
         <option value="$PROJECT_DIR$/eventos/templates/eventos/dados-do-curso.html" />
         <option value="$PROJECT_DIR$/eventos/templates/base.html" />
@@ -112,6 +124,7 @@
         <option value="$PROJECT_DIR$/usuario/templates/usuario/dados-pessoais.html" />
         <option value="$PROJECT_DIR$/usuario/templates/usuario/lista-curso-inscrito.html" />
         <option value="$PROJECT_DIR$/usuario/views.py" />
+        <option value="$PROJECT_DIR$/usuario/templates/usuario/dashboard.html" />
       </list>
     </option>
   </component>
@@ -269,12 +282,12 @@
       <workItem from="1563393571974" duration="2916000" />
       <workItem from="1563468182335" duration="12074000" />
       <workItem from="1563557508566" duration="6316000" />
-      <workItem from="1563893282146" duration="1857000" />
+      <workItem from="1563893282146" duration="2042000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84497000" />
+    <option name="totallyTimeSpent" value="84682000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -289,7 +302,7 @@
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17961165" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17961165" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -300,10 +313,10 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3298731" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3298731" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.3298731" />
-      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3298731" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -337,6 +350,32 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/manage.py">
@@ -476,13 +515,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/usuario/templates/usuario/dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/usuario/templates/usuario/cadastro-inscrito.html" />
     <entry file="file://$PROJECT_DIR$/usuario/templates/base_dash.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -588,12 +620,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/usuario/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="136" column="32" selection-start-line="136" selection-start-column="32" selection-end-line="136" selection-end-column="32" />
+        <state relative-caret-position="601">
+          <caret line="88" column="42" lean-forward="true" selection-start-line="88" selection-start-column="42" selection-end-line="88" selection-end-column="42" />
           <folding>
             <element signature="e#0#64#0" expanded="true" />
             <element signature="e#179#1223#0" />
+            <element signature="e#4263#6050#0" />
+            <element signature="e#6095#7010#0" />
+            <element signature="e#7068#7469#0" />
+            <element signature="e#7521#7653#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/usuario/templates/usuario/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
         </state>
       </provider>
     </entry>
