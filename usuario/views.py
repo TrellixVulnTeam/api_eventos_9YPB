@@ -240,32 +240,13 @@ def dados_usuario(request, registro):
     return render(request, 'usuario/dados-pessoais.html', context)
 
 
-def alterar_cadastro_inscrito(request, registro):
-
-    if request.method == 'POST':
-        print("Metodo POSt")
-        #form = UsuarioLoginForm(request.POST)
-
-
-    # url = "https://apieventos.conveniar.com.br/conveniar/api/eventos/usuario"
-    #
-    # usuario = Usuario.objects.get(registro=registro)
-    #
-    # header = {
-    #     'Authorization': usuario.token
-    # }
-    #
-    # r = requests.put(url, headers=header)
-    # print(r)
-
-    return None
-
-
 def exibir_tela_cadatrar_inscrito(request):
+    return render(request, 'usuario/registrar.html')
 
-    form = UsuarioLoginForm()
 
-    context = {
-        'form': form,
-    }
-    return render(request, 'usuario/registrar.html', context)
+def cadastrar_inscrito(request):
+    if request.method == 'POST':
+        print('informação enviada')
+
+
+    return 0
