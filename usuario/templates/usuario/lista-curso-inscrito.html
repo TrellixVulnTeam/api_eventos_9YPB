@@ -11,11 +11,13 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ evento.nomeEvento }}</h5>
                         <p class="card-text">Qualquer coisa</p>
-                        {% for usuario in usuario_data %}
-                            <a href="{% url 'listar_documento_financeiro' usuario.registro evento.CodEventoInscricao %}"
-                           class="btn btn-primary">
-                            <i class="fas fa-file-invoice-dollar"></i> Documentos Financeiros</a>
-                        {% endfor %}
+                        {% if evento.nomeStatus == 'Inscrito' %}
+                            {% for usuario in usuario_data %}
+                                <a href="{% url 'listar_documento_financeiro' usuario.registro evento.CodEventoInscricao %}"
+                               class="btn btn-primary">
+                                <i class="fas fa-file-invoice-dollar"></i> Documentos Financeiros</a>
+                            {% endfor %}
+                        {% endif %}
                     </div>
                     {% if evento.nomeStatus == "Cancelado" %}
                         <div class="card-footer text-warning"><strong>{{ evento.nomeStatus }}</strong></div>

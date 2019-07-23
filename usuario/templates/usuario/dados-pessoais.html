@@ -5,8 +5,9 @@
         <div class="container-fluid">
             <h2>Dados Pessoais</h2>
             <hr>
-            <form>
-                {% for usuario in usuario_data %}
+            {% for usuario in usuario_data %}
+            <form action="{% url 'alterar_cadastro_inscrito' usuario.registro %}" class="form_login" method="POST">
+                {% csrf_token %}
                 <div class="form-group">
                     <label for="inputNome">Nome Complemento</label>
                     <input type="text" class="form-control" id="inputNome" placeholder="Nome completo" value="{{ usuario.Nome }}">
@@ -88,7 +89,7 @@
                 {% endfor %}
                 <hr>
 
-                <button type="submit" class="btn btn-primary">Salvar</button>
+                <button type="submit" class="btn btn-primary">Salvar alterações</button>
             </form>
         </div>
     </main>

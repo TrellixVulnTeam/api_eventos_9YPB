@@ -7,5 +7,4 @@ urlpatterns = [
     url('^$', views.listar_eventos, name='listar_eventos'),
     url(r'^portal-eventos/$', views.listar_eventos, name='listar_eventos'),
     url('eventos/(?P<cod_evento>[\d]+)$', views.eventos_dados, name='eventos_dados'),
-    url(r'cadastro/inscrito/$', views.cadastro_inscrito, name='cadastro_inscrito'),
 ]

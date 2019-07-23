@@ -34,11 +34,6 @@ def listar_eventos(request):
     return render(request, 'eventos/index.html', context)
 
 
-def cadastro_inscrito(request):
-
-    return render(request, 'eventos/registrar.html')
-
-
 def eventos_dados(request, cod_evento):
     codigo_evento = cod_evento
     url = 'https://apieventos.conveniar.com.br/conveniar/api/eventos/ids?codEventos=' + codigo_evento
@@ -68,15 +63,18 @@ def eventos_dados(request, cod_evento):
             'NomeConvenio': data['NomeConvenio'],
             'Categoria': data['Categoria'],
             'Situacao': data['Situacao'],
-            'DataInicio': data['DataInicio'],
-            'DataFim': data['DataFim'],
+            'DataInicio': data['DataInicio'].strftime("%Y-%m-%d %H:%M:%S"),
+            'DataFim': data['DataFim'].strftime("%Y-%m-%d %H:%M:%S"),
             'NumeroVagas': data['NumeroVagas'],
             # 'DescricaoEventoInformacao': data['Informacoes']['DescricaoEventoInformacao']
         }
         eventos_data.append(evento)
 
+    form = UsuarioLoginForm()
+
     context = {
-        'eventos_data': eventos_data
+        'eventos_data': eventos_data,
+        'form': form
     }
 
     return render(request, 'eventos/dados-do-curso.html', context)
