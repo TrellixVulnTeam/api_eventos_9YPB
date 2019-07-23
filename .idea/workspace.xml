@@ -30,43 +30,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/usuario/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="15" column="72" lean-forward="true" selection-start-line="15" selection-start-column="72" selection-end-line="15" selection-end-column="72" />
+            <state relative-caret-position="238">
+              <caret line="16" column="60" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="60" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/usuario/views.py">
+        <entry file="file://$PROJECT_DIR$/usuario/templates/usuario/dashboard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="601">
-              <caret line="88" column="42" lean-forward="true" selection-start-line="88" selection-start-column="42" selection-end-line="88" selection-end-column="42" />
-              <folding>
-                <element signature="e#0#64#0" expanded="true" />
-                <element signature="e#179#1223#0" />
-                <element signature="e#4263#6050#0" />
-                <element signature="e#6095#7010#0" />
-                <element signature="e#7068#7469#0" />
-                <element signature="e#7521#7653#0" />
-              </folding>
+            <state>
+              <caret column="20" lean-forward="true" selection-start-column="20" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/usuario/templates/usuario/dashboard.html">
+        <entry file="file://$PROJECT_DIR$/usuario/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+            <state relative-caret-position="145">
+              <caret line="40" column="6" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="6" />
+              <folding>
+                <element signature="e#0#64#0" expanded="true" />
+                <element signature="e#179#2291#0" />
+                <element signature="e#296#1361#0" />
+                <element signature="e#2579#4161#0" />
+                <element signature="e#6072#6987#0" />
+                <element signature="e#7045#7446#0" />
+                <element signature="e#7498#7630#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/usuario/templates/usuario/lista-curso-inscrito.html">
+        <entry file="file://$PROJECT_DIR$/env/Lib/site-packages/django/shortcuts.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="32" column="14" lean-forward="true" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+            <state relative-caret-position="637">
+              <caret line="94" column="49" selection-start-line="94" selection-start-column="21" selection-end-line="94" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -88,6 +89,7 @@
       <find>portal-eventos/</find>
       <find>sair</find>
       <find>heade</find>
+      <find>listar_documento_financeiro</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -123,16 +125,15 @@
         <option value="$PROJECT_DIR$/usuario/urls.py" />
         <option value="$PROJECT_DIR$/usuario/templates/usuario/dados-pessoais.html" />
         <option value="$PROJECT_DIR$/usuario/templates/usuario/lista-curso-inscrito.html" />
-        <option value="$PROJECT_DIR$/usuario/views.py" />
         <option value="$PROJECT_DIR$/usuario/templates/usuario/dashboard.html" />
+        <option value="$PROJECT_DIR$/usuario/views.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="53" />
-    <option name="y" value="287" />
-    <option name="width" value="1087" />
-    <option name="height" value="699" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="633" />
+    <option name="width" value="654" />
+    <option name="height" value="991" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -282,12 +283,12 @@
       <workItem from="1563393571974" duration="2916000" />
       <workItem from="1563468182335" duration="12074000" />
       <workItem from="1563557508566" duration="6316000" />
-      <workItem from="1563893282146" duration="2042000" />
+      <workItem from="1563893282146" duration="6884000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84682000" />
+    <option name="totallyTimeSpent" value="89524000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -302,7 +303,7 @@
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17961165" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.37373737" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -516,13 +517,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/usuario/templates/usuario/cadastro-inscrito.html" />
-    <entry file="file://$PROJECT_DIR$/usuario/templates/base_dash.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="38" column="53" selection-start-line="38" selection-start-column="53" selection-end-line="38" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api_eventos/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-31">
@@ -611,32 +605,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/usuario/urls.py">
+    <entry file="file://$PROJECT_DIR$/env/Lib/site-packages/django/shortcuts.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" column="72" lean-forward="true" selection-start-line="15" selection-start-column="72" selection-end-line="15" selection-end-column="72" />
+        <state relative-caret-position="637">
+          <caret line="94" column="49" selection-start-line="94" selection-start-column="21" selection-end-line="94" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/usuario/views.py">
+    <entry file="file://$PROJECT_DIR$/usuario/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="601">
-          <caret line="88" column="42" lean-forward="true" selection-start-line="88" selection-start-column="42" selection-end-line="88" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#64#0" expanded="true" />
-            <element signature="e#179#1223#0" />
-            <element signature="e#4263#6050#0" />
-            <element signature="e#6095#7010#0" />
-            <element signature="e#7068#7469#0" />
-            <element signature="e#7521#7653#0" />
-          </folding>
+        <state relative-caret-position="238">
+          <caret line="16" column="60" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/usuario/templates/base_dash.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="23" column="46" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/usuario/templates/usuario/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+        <state>
+          <caret column="20" lean-forward="true" selection-start-column="20" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/usuario/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="40" column="6" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#64#0" expanded="true" />
+            <element signature="e#179#2291#0" />
+            <element signature="e#296#1361#0" />
+            <element signature="e#2579#4161#0" />
+            <element signature="e#6072#6987#0" />
+            <element signature="e#7045#7446#0" />
+            <element signature="e#7498#7630#0" />
+          </folding>
         </state>
       </provider>
     </entry>

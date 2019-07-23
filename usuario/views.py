@@ -11,7 +11,6 @@ def login(request):
     if request.method == 'POST':
         form = UsuarioLoginForm(request.POST)
         if form.is_valid():
-
             registro = form.cleaned_data['registro']
             senha = form.cleaned_data['senha']
 
@@ -32,6 +31,7 @@ def login(request):
                 if q:
                     return redirect('dashboard', usuario.registro)
             else:
+                print('Sem login')
                 return redirect('listar_eventos')
 
     return redirect('listar_eventos')
@@ -77,6 +77,7 @@ def dashboard(request, registro):
             'nomeCategoria_inscricao': data['NomeCategoriaInscricao'],
             'nomeStatus': data['NomeStatus'],
             'registro': data['NumeroInscricao'],
+            'codEventoInscricao': data['CodEventoInscricao']
         }
 
         evento_data.append(evento)

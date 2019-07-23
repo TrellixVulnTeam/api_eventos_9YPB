@@ -13,7 +13,8 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ evento.nomeEvento }}</h5>
                                 <p class="card-text">Qualquer coisa</p>
-                                <a href="#" class="btn btn-primary"><i class="fas fa-file-invoice-dollar"></i> Documentos Financeiros</a>
+                                <a href="{% url 'listar_documento_financeiro' evento.registro evento.codEventoInscricao %}"
+                                   class="btn btn-primary"><i class="fas fa-file-invoice-dollar"></i> Documentos Financeiros</a>
                             </div>
 
                             <div class="card-footer text-success"><strong>{{ evento.nomeStatus }}</strong></div>
