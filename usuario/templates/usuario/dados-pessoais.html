@@ -6,7 +6,7 @@
             <h2>Dados Pessoais</h2>
             <hr>
             {% for usuario in usuario_data %}
-            <form action="{% url 'alterar_cadastro_inscrito' usuario.registro %}" class="form_login" method="POST">
+            <form action="{}" class="form_login" method="POST">
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="inputNome">Nome Complemento</label>
@@ -86,10 +86,12 @@
                         </select>
                     </div>
                 </div>
-                {% endfor %}
                 <hr>
 
+                <a href="{% url 'dashboard' usuario.registro %}" class="btn btn-secondary">Voltar</a>
                 <button type="submit" class="btn btn-primary">Salvar alterações</button>
+
+                {% endfor %}
             </form>
         </div>
     </main>

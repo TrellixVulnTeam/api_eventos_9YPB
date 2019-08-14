@@ -9,8 +9,8 @@ urlpatterns = [
     url(r'^dashboard/(?P<registro>[\d]+)$', views.dashboard, name='dashboard'),
     url(r'^dados-usuario/(?P<registro>[\d]+)$', views.dados_usuario, name='dados_usuario'),
 
-    url(r'^alterar/dados/(?P<registro>[\d]+)$', views.alterar_cadastro_inscrito, name='alterar_cadastro_inscrito'),
-    url(r'^cadastro/inscrito/$', views.exibir_tela_cadatrar_inscrito, name='cadastro_inscrito'),
+    # url(r'^alterar/dados/(?P<registro>[\d]+)$', views.alterar_cadastro_inscrito, name='alterar_cadastro_inscrito'),
+    # url(r'^cadastro/inscrito/$', views.exibir_tela_cadatrar_inscrito, name='cadastro_inscrito'),
 
 
     url(r'^eventos/cursos/inscrito/(?P<registro>[\d]+)$', views.eventos_cursos, name='eventos_cursos'),

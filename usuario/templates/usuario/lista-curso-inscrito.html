@@ -1,33 +1,35 @@
 {% extends 'base_dash.html' %}
 {% block body %}
     <main class="page-content">
-        <h3>Todos os eventos que possuo inscrição</h3>
-        <hr>
-        {% for evento in evento_data %}
-        <div class="col">
-            <div class="card">
-                <div class="card text-center">
-                    <div class="card-header"><strong>{{ evento.nomeCategoria_inscricao }}</strong></div>
-                    <div class="card-body">
-                        <h5 class="card-title">{{ evento.nomeEvento }}</h5>
-                        <p class="card-text">Qualquer coisa</p>
-                        {% if evento.nomeStatus == 'Inscrito' %}
-                            {% for usuario in usuario_data %}
-                                <a href="{% url 'listar_documento_financeiro' usuario.registro evento.CodEventoInscricao %}"
-                               class="btn btn-primary">
-                                <i class="fas fa-file-invoice-dollar"></i> Documentos Financeiros</a>
-                            {% endfor %}
-                        {% endif %}
+        <div class="container">
+            <h3>Todos os eventos que possuo inscrição</h3>
+            <hr>
+            {% for evento in evento_data %}
+                <div class="col">
+                    <div class="card">
+                        <div class="card text-center">
+                            <div class="card-header"><strong>{{ evento.nomeCategoria_inscricao }}</strong></div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ evento.nomeEvento }}</h5>
+                                <p class="card-text">Qualquer coisa</p>
+                                {% if evento.nomeStatus == 'Inscrito' %}
+                                    {% for usuario in usuario_data %}
+                                        <a href="{% url 'listar_documento_financeiro' usuario.registro evento.CodEventoInscricao %}"
+                                           class="btn btn-primary">
+                                            <i class="fas fa-file-invoice-dollar"></i> Documentos Financeiros</a>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                            {% if evento.nomeStatus == "Cancelado" %}
+                                <div class="card-footer text-warning"><strong>{{ evento.nomeStatus }}</strong></div>
+                            {% endif %}
+                            {% if evento.nomeStatus == "Inscrito" %}
+                                <div class="card-footer text-success"><strong>{{ evento.nomeStatus }}</strong></div>
+                            {% endif %}
+                        </div>
                     </div>
-                    {% if evento.nomeStatus == "Cancelado" %}
-                        <div class="card-footer text-warning"><strong>{{ evento.nomeStatus }}</strong></div>
-                    {% endif %}
-                    {% if evento.nomeStatus == "Inscrito" %}
-                        <div class="card-footer text-success"><strong>{{ evento.nomeStatus }}</strong></div>
-                    {% endif %}
                 </div>
-            </div>
+            {% endfor %}
         </div>
-    {% endfor %}
     </main>
 {% endblock %}

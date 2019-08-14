@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 import requests
-
+from django.contrib import messages
 from usuario.models import Usuario
 from .forms import UsuarioLoginForm
 
@@ -31,7 +31,8 @@ def login(request):
                 if q:
                     return redirect('dashboard', usuario.registro)
             else:
-                print('Sem login')
+                ERROR = 40
+                messages.add_message(request, ERROR, 'A serious error occurred.')
                 return redirect('listar_eventos')
 
     return redirect('listar_eventos')
@@ -240,13 +241,10 @@ def dados_usuario(request, registro):
     return render(request, 'usuario/dados-pessoais.html', context)
 
 
-def exibir_tela_cadatrar_inscrito(request):
-    return render(request, 'usuario/registrar.html')
+# def exibir_tela_cadatrar_inscrito(request):return render(request, 'usuario/registrar.html')
 
 
 def cadastrar_inscrito(request):
     if request.method == 'POST':
         print('informação enviada')
-
-
     return 0
