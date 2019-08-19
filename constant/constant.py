@@ -1,0 +1,1 @@
+URLBASE = 'https://api.conveniar.com.br/gateway/eventos/'

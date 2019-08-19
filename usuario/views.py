@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
-import requests
 from django.contrib import messages
 from usuario.models import Usuario
 from .forms import UsuarioLoginForm
+import requests
 
 
 def login(request):
