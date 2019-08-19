@@ -47,6 +47,11 @@ def formatar_data(datas):
     return nova_data
 
 
+def data_atual():
+    hoje = datetime.datetime.now().date()
+    return formatar_data(str(hoje))
+
+
 def eventos_dados(request, cod_evento):
     codigo_evento = cod_evento
     url = URLBASE + 'ids?codEventos=' + codigo_evento
@@ -87,15 +92,17 @@ def eventos_dados(request, cod_evento):
                 'DataInicio': nova_data_fim,
                 'DataFim': nova_data_inicio,
                 'NumeroVagas': data['NumeroVagas'],
-                # 'DescricaoEventoInformacao': data['Informacoes']['DescricaoEventoInformacao']
             }
             eventos_data.append(evento)
 
         form = UsuarioLoginForm()
 
+        hoje = data_atual()
+
         context = {
             'eventos_data': eventos_data,
-            'form': form
+            'form': form,
+            'hoje': hoje
         }
 
         return render(request, 'eventos/dados-do-curso.html', context)

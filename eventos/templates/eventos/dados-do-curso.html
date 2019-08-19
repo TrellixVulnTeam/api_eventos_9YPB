@@ -48,9 +48,11 @@
             {% endif %}
         </div>
 
-        <div class="container mt-2 mb-3">
-            <button type="button" class="btn btn-primary btn-lg btn-block">Inscreva-se</button>
-        </div>
+        {% if evento.DataFim >= hoje %}
+            <div class="container mt-2 mb-3">
+                <button type="button" class="btn btn-primary btn-lg btn-block">Inscreva-se</button>
+            </div>
+        {% endif  %}
 
     </section>
     {% endfor %}
