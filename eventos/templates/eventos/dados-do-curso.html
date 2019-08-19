@@ -6,68 +6,52 @@
     <section id="dados-curso" class="mt-0">
         <div class="jumbotron jumbotron-fluid mb-0" id="painelNomeCurso" >
             <div class="container">
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-
-                                <p id="nome-do-curso" class="display-4 text-center">{{ evento.NomeEvento }}</p>
-                        </div>
+                <div class="row">
+                    <div class="col">
+                        <p id="nome-do-curso" class="display-4 text-center">{{ evento.NomeEvento }}</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="nav-scroller bg-white shadow-sm">
-            <nav class="nav nav-underline">
-                <div class="container">
-                    <div class="row mt-4">
-                        <!-- Inicio do curso !-->
-                        <div class="col-4">
-                            <div class="col-1 text-center">
-                                <i class="far fa-calendar-check fa-lg text-center"></i>
-                            </div>
-                            <div>
-                                <div class="col">
-                                    <p><small><strong>Data Inicio: </strong> {{ evento.DataInicio }}</small></p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Categoria do Evento !-->
-                        <div class="col-4">
-                            <div class="col-1">
-                                <i class="far fa-calendar-times fa-lg"></i>
-                            </div>
-                            <div class="col">
-                                <p><small><strong>Data Inicio: </strong> {{ evento.DataFim }}</small></p>
-                            </div>
-                        </div>
 
-                        <!-- Categoria do Evento !-->
-                        <div class="col-4">
-                            <div class="col-1">
-                                <i class="fa fa-list-alt fa-lg"></i>
-                            </div>
-                            <div class="col">
-                                <p><small><strong>Categoria:</strong> {{ evento.Categoria}}</small></p>
-                            </div>
-                        </div>
+        <div class="nav nav-underline bg-white shadow-sm">
+            <div class="container">
+                <div class="row">
+                    <!-- Inicio do curso !-->
+                    <div class="col-4 mt-3 mb-3">
+                        <i class="fas fa-calendar-check fa-lg"></i>
+                        <small><strong>Data Inicio: </strong> {{ evento.DataInicio }}</small>
+                    </div>
+                    <!-- Categoria do Evento !-->
+                    <div class="col-4 mt-3 mb-3">
+                        <i class="far fa-calendar-times fa-lg"></i>
+                        <small><strong>Data Inicio: </strong> {{ evento.DataFim }}</small>
+                    </div>
+                    <!-- Categoria do Evento !-->
+                    <div class="col-4 mt-3 mb-3">
+                        <i class="fa fa-list-alt fa-lg"></i>
+                        <small><strong>Categoria:</strong> {{ evento.Categoria}}</small>
                     </div>
                 </div>
-            </nav>
+            </div>
         </div>
+
         <div class="container mt-3">
-        {% if evento.DescricaoEventoInformacao %}
-            {% autoescape off %}
-                {{ evento.DescricaoEventoInformacao }}
-            {% endautoescape %}
-        {% else %}
-            <div>
-                <p>Sem Informações informada</p>
-            </div>
-        {% endif %}
+            {% if evento.DescricaoEventoInformacao %}
+                {% autoescape off %}
+                    {{ evento.DescricaoEventoInformacao }}
+                {% endautoescape %}
+            {% else %}
+                <div>
+                    <p>Sem Informações informada</p>
+                </div>
+            {% endif %}
         </div>
-        <div class="container mb-2">
-        <button type="button" class="btn btn-primary btn-lg btn-block">Inscreve-se</button>
-    </div>
+
+        <div class="container mt-2 mb-3">
+            <button type="button" class="btn btn-primary btn-lg btn-block">Inscreva-se</button>
+        </div>
+
     </section>
     {% endfor %}
 </main>

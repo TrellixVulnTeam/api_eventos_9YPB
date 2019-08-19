@@ -48,17 +48,7 @@
             <div class="modal-body">
                 <form action="{% url 'auth_login' %}" class="form_login" method="post">
                     {% csrf_token %}
-{#                    <div class="form-group">#}
-{#                        <label for="exampleInputNRegristo">N° Registro</label>#}
-{#                        <input type="text" class="form-control" id="exampleInputNRegristo" name="num_registro" placeholder="Numero do Registro">#}
-{#                    </div>#}
-{##}
-{#                    <div class="form-group">#}
-{#                        <label for="exampleInputSenha">Senha</label>#}
-{#                        <input type="password" name="password" class="form-control" id="exampleInputSenha" placeholder="Insira a senha">#}
-{#                    </div>#}
                     {{ form.as_p }}
-
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary" id="botaoLogin" >Entrar</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -73,6 +63,14 @@
 <main id="bloqueado">
     {% block main %}
     {% endblock %}
+
+
+    {% block footer %}
+        <footer class="page-footer font-small blue">
+            <div class="footer-copyright text-center py-3">© 2019 Copyright: Apredizado Continuo</div>
+        </footer>
+    {% endblock %}
+
 </main>
 
 
@@ -82,8 +80,5 @@
 <script src="{% static 'js/js/bootstrap.min.js' %}"></script>
 <script src="{% static 'js/js/modal.js' %}"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<!--<script src="api/listar-eventos.js"></script>
-<script src="api/dados_curso.js"></script>
-<script src="api/carregamento.js"></script> !-->
 </body>
 </html>

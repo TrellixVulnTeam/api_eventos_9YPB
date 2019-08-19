@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 # from eventos import AccessToken
 from usuario.forms import UsuarioLoginForm
 from constant.constant import URLBASE
+import datetime
 
 
 def listar_eventos(request):
@@ -41,10 +42,14 @@ def listar_eventos(request):
         return render(request, 'eventos/error404.html')
 
 
+def formatar_data(datas):
+    nova_data = (datas[8:10] + "/" + datas[5:7] + "/" + datas[0:4])
+    return nova_data
+
+
 def eventos_dados(request, cod_evento):
     codigo_evento = cod_evento
     url = URLBASE + 'ids?codEventos=' + codigo_evento
-    print(url)
     headers = {'X-API-KEY': '7e61b6bb-6841-415f-954e-5e2ba445cc7c'}
     r = requests.get(url, headers=headers)
 
@@ -54,27 +59,33 @@ def eventos_dados(request, cod_evento):
         eventos_data = []
 
         if data['Informacoes'] is not None:
+            nova_data_inicio = formatar_data(data['DataInicio'])
+            nova_data_fim = formatar_data(data['DataFim'])
+
             evento = {
                     'CodEvento': data['CodEvento'],
                     'NomeEvento': data['NomeEvento'],
                     'NomeConvenio': data['NomeConvenio'],
                     'Categoria': data['Categoria'],
                     'Situacao': data['Situacao'],
-                    'DataInicio': data['DataInicio'],
-                    'DataFim': data['DataFim'],
+                    'DataInicio': nova_data_inicio,
+                    'DataFim': nova_data_fim,
                     'NumeroVagas': data['NumeroVagas'],
                     'DescricaoEventoInformacao': data['Informacoes']['DescricaoEventoInformacao']
             }
             eventos_data.append(evento)
         else:
+            nova_data_inicio = formatar_data(data['DataInicio'])
+            nova_data_fim = formatar_data(data['DataFim'])
+
             evento = {
                 'CodEvento': data['CodEvento'],
                 'NomeEvento': data['NomeEvento'],
                 'NomeConvenio': data['NomeConvenio'],
                 'Categoria': data['Categoria'],
                 'Situacao': data['Situacao'],
-                'DataInicio': data['DataInicio'].strftime("%Y-%m-%d %H:%M:%S"),
-                'DataFim': data['DataFim'].strftime("%Y-%m-%d %H:%M:%S"),
+                'DataInicio': nova_data_fim,
+                'DataFim': nova_data_inicio,
                 'NumeroVagas': data['NumeroVagas'],
                 # 'DescricaoEventoInformacao': data['Informacoes']['DescricaoEventoInformacao']
             }

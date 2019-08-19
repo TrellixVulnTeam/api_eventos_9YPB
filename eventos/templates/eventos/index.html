@@ -8,7 +8,10 @@
             <hr>
         </section>
         <section id="eventos-cursos-servivos" class="mt-5">
-            <li class="list-group-item disabled p-3 mb-2 bg-primary text-white" aria-disabled="true"><h5>Listas de Eventos, Cursos e Serviços</h5></li>
+            <div class="list-group-item disabled p-3 mb-2 bg-primary text-white" aria-disabled="true">
+                <h5>Listas de Eventos, Cursos e Serviços</h5>
+            </div>
+
                 <div class="">
                     <ul class="list-group">
                         {% for evento in eventos_data %}
@@ -19,9 +22,9 @@
 
                                         <div class="col col-xl-7 col-md-7">{{ evento.nomeEvento }}</div>
                                         {% if evento.numeroVagas %}
-                                            <div class="col col-xl-2 col-md-2"><span class="badge badge-success">Numeros de vagas: {{ evento.numeroVagas }}</span></div>
+                                            <div class="col col-xl-2 col-md-2"><span class="badge badge-success">Números de vagas: {{ evento.numeroVagas }}</span></div>
                                         {% else %}
-                                            <div class="col col-xl-2 col-md-2"><span class="badge badge-warning">Numero de vagas não informadas</span></div>
+                                            <div class="col col-xl-2 col-md-2"><span class="badge badge-warning">Números de vagas não informadas</span></div>
                                         {% endif %}
                                     </div>
                                 </li>
