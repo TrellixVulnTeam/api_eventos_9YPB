@@ -20,14 +20,14 @@ def listar_eventos(request):
         for item in range(len(r.json())):
             data = r.json()[item]
             eventos = {
-                'CodEvento': data['CodEvento'],
-                'NomeEvento': data['NomeEvento'],
-                'NomeConvenio': data['NomeConvenio'],
-                'Categoria': data['Categoria'],
-                'Situacao': data['Situacao'],
-                'DataInicio': data['DataInicio'],
-                'DataFim': data['DataFim'],
-                'NumeroVagas': data['NumeroVagas']
+                'codEvento': data['CodEvento'],
+                'nomeEvento': data['NomeEvento'],
+                'nomeConvenio': data['NomeConvenio'],
+                'categoria': data['Categoria'],
+                'situacao': data['Situacao'],
+                'dataInicio': data['DataInicio'],
+                'dataFim': data['DataFim'],
+                'numeroVagas': data['NumeroVagas']
             }
             eventos_data.append(eventos)
 

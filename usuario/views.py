@@ -2,11 +2,12 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from usuario.models import Usuario
 from .forms import UsuarioLoginForm
+from constant.constant import URLBASE
 import requests
 
 
 def login(request):
-    url = "https://apiauth.conveniar.com.br/conveniar/api/eventos/oauth/token"
+    url = URLBASE + 'oauth/token'
 
     if request.method == 'POST':
         form = UsuarioLoginForm(request.POST)
@@ -31,8 +32,8 @@ def login(request):
                 if q:
                     return redirect('dashboard', usuario.registro)
             else:
-                ERROR = 40
-                messages.add_message(request, ERROR, 'A serious error occurred.')
+                # ERROR = 40
+                # messages.add_message(request, ERROR, 'A serious error occurred.')
                 return redirect('listar_eventos')
 
     return redirect('listar_eventos')
@@ -40,7 +41,8 @@ def login(request):
 
 def dashboard(request, registro):
     # Dados do usuario
-    url = 'https://apieventos.conveniar.com.br/conveniar/api/eventos/usuario'
+
+    url = URLBASE + 'eventos/usuario'
     usuario = Usuario.objects.get(registro=registro)
 
     header = {
@@ -49,51 +51,54 @@ def dashboard(request, registro):
 
     r = requests.get(url, headers=header)
 
-    data = r.json()
-    usuario_data = []
+    if r.status_code == 200:
+        data = r.json()
+        usuario_data = []
 
-    usuario = {
-        'Nome': data['Nome'],
-        'registro': data['NumRegistro']
-    }
-
-    usuario_data.append(usuario)
-
-    # Dados do eventos
-    url = "https://apieventos.conveniar.com.br/conveniar/api/eventos/inscricoes?pagina=1&limite=50"
-    usuario = Usuario.objects.get(registro=registro)
-
-    header = {
-        'Authorization': usuario.token
-    }
-
-    r = requests.get(url, headers=header)
-    evento_data = []
-
-    for i in range(len(r.json())):
-        data = r.json()[i]
-        evento = {
-            'codEvento': data['CodEvento'],
-            'nomeEvento': data['NomeEvento'],
-            'nomeCategoria_inscricao': data['NomeCategoriaInscricao'],
-            'nomeStatus': data['NomeStatus'],
-            'registro': data['NumeroInscricao'],
-            'codEventoInscricao': data['CodEventoInscricao']
+        usuario = {
+            'Nome': data['Nome'],
+            'registro': data['NumRegistro']
         }
 
-        evento_data.append(evento)
+        usuario_data.append(usuario)
 
-    context = {
-        'usuario_data': usuario_data,
-        'evento_data': evento_data
-    }
+        # Dados do eventos
+        url = "https://apieventos.conveniar.com.br/conveniar/api/eventos/inscricoes?pagina=1&limite=50"
+        usuario = Usuario.objects.get(registro=registro)
 
-    return render(request, 'usuario/dashboard.html', context)
+        header = {
+            'Authorization': usuario.token
+        }
+
+        r = requests.get(url, headers=header)
+        evento_data = []
+
+        for i in range(len(r.json())):
+            data = r.json()[i]
+            evento = {
+                'codEvento': data['CodEvento'],
+                'nomeEvento': data['NomeEvento'],
+                'nomeCategoria_inscricao': data['NomeCategoriaInscricao'],
+                'nomeStatus': data['NomeStatus'],
+                'registro': data['NumeroInscricao'],
+                'codEventoInscricao': data['CodEventoInscricao']
+            }
+
+            evento_data.append(evento)
+
+        context = {
+            'usuario_data': usuario_data,
+            'evento_data': evento_data
+        }
+
+        return render(request, 'usuario/dashboard.html', context)
+    else:
+        return render(request, 'eventos/error404.html')
 
 
 def eventos_cursos(request, registro):
 
-    url = "https://apieventos.conveniar.com.br/conveniar/api/eventos/inscricoes?pagina=1&limite=50"
+    url = URLBASE + 'inscricoes?pagina=1&limite=50'
     usuario = Usuario.objects.get(registro=registro)
 
     header = {
