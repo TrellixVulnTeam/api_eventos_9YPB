@@ -213,7 +213,7 @@ def listar_documento_financeiro(request, registro, codeventoinscricao):
         'documentos_financieros': documentos_financieros
     }
 
-    return render(request, 'usuario/lista-documento-financeiro.html', context)
+    return render(request, 'usuario/dashboard.html', context)
 
 
 def dados_usuario(request, registro):
