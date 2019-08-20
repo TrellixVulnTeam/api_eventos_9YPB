@@ -30,8 +30,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="61" selection-start-line="11" selection-start-column="61" selection-end-line="11" selection-end-column="61" />
+            <state relative-caret-position="145">
+              <caret line="12" column="18" lean-forward="true" selection-start-line="10" selection-start-column="12" selection-end-line="12" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/usuario/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="28" lean-forward="true" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -40,31 +52,31 @@
         <entry file="file://$PROJECT_DIR$/constant/constant.py">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="11" lean-forward="true" selection-start-column="11" selection-end-column="56" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/usuario/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="101" column="51" selection-start-line="101" selection-start-column="51" selection-end-line="101" selection-end-column="51" />
-              <folding>
-                <element signature="e#0#64#0" expanded="true" />
-              </folding>
+              <caret column="57" lean-forward="true" selection-start-column="57" selection-end-column="57" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/usuario/urls.py">
+        <entry file="file://$PROJECT_DIR$/usuario/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="30" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="30" />
+            <state relative-caret-position="326">
+              <caret line="194" column="4" lean-forward="true" selection-start-line="194" selection-start-column="4" selection-end-line="194" selection-end-column="4" />
               <folding>
-                <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#0#64#0" expanded="true" />
+                <element signature="e#252#1363#0" />
+                <element signature="e#2960#4494#0" />
+                <element signature="e#6405#7320#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/usuario/templates/usuario/dashboard.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="55" lean-forward="true" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -113,7 +125,6 @@
         <option value="$PROJECT_DIR$/usuario/models.py" />
         <option value="$PROJECT_DIR$/usuario/forms.py" />
         <option value="$PROJECT_DIR$/eventos/templates/eventos/registrar.html" />
-        <option value="$PROJECT_DIR$/usuario/templates/usuario/dashboard.html" />
         <option value="$PROJECT_DIR$/usuario/templates/usuario/registrar.html" />
         <option value="$PROJECT_DIR$/usuario/urls.py" />
         <option value="$PROJECT_DIR$/usuario/templates/usuario/lista-curso-inscrito.html" />
@@ -122,22 +133,23 @@
         <option value="$PROJECT_DIR$/usuario/templates/usuario/dados-pessoais.html" />
         <option value="$PROJECT_DIR$/eventos/templates/eventos/error404.html" />
         <option value="$PROJECT_DIR$/constant/__init__.py" />
-        <option value="$PROJECT_DIR$/constant/constant.py" />
         <option value="$PROJECT_DIR$/eventos/urls.py" />
-        <option value="$PROJECT_DIR$/usuario/views.py" />
         <option value="$PROJECT_DIR$/eventos/templates/base.html" />
         <option value="$PROJECT_DIR$/teste.py" />
-        <option value="$PROJECT_DIR$/eventos/templates/eventos/dados-do-curso.html" />
         <option value="$PROJECT_DIR$/eventos/views.py" />
         <option value="$PROJECT_DIR$/eventos/templates/eventos/index.html" />
+        <option value="$PROJECT_DIR$/eventos/templates/eventos/dados-do-curso.html" />
+        <option value="$PROJECT_DIR$/constant/constant.py" />
+        <option value="$PROJECT_DIR$/usuario/templates/usuario/dashboard.html" />
+        <option value="$PROJECT_DIR$/usuario/views.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="15" />
-    <option name="y" value="256" />
-    <option name="width" value="1133" />
-    <option name="height" value="991" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1296" />
+    <option name="height" value="1000" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -145,6 +157,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -155,13 +168,48 @@
             <path>
               <item name="api_eventos" type="b2602c69:ProjectViewProjectNode" />
               <item name="api_eventos" type="462c0819:PsiDirectoryNode" />
+              <item name="constant" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="api_eventos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="api_eventos" type="462c0819:PsiDirectoryNode" />
+              <item name="eventos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="api_eventos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="api_eventos" type="462c0819:PsiDirectoryNode" />
+              <item name="eventos" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="api_eventos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="api_eventos" type="462c0819:PsiDirectoryNode" />
+              <item name="eventos" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="eventos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="api_eventos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="api_eventos" type="462c0819:PsiDirectoryNode" />
+              <item name="usuario" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="api_eventos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="api_eventos" type="462c0819:PsiDirectoryNode" />
+              <item name="usuario" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="api_eventos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="api_eventos" type="462c0819:PsiDirectoryNode" />
+              <item name="usuario" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="usuario" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -263,11 +311,12 @@
       <workItem from="1565813228868" duration="1605000" />
       <workItem from="1566213078020" duration="17619000" />
       <workItem from="1566241200957" duration="1461000" />
+      <workItem from="1566315748517" duration="3536000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114518000" />
+    <option name="totallyTimeSpent" value="118054000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -279,10 +328,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
+    <frame x="-8" y="-8" width="1296" height="1000" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19255663" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.19579288" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -497,13 +546,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/usuario/templates/usuario/dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="26" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/usuario/templates/usuario/registrar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -542,24 +584,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/usuario/templates/usuario/dados-pessoais.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="601">
-          <caret line="90" column="60" selection-start-line="90" selection-start-column="60" selection-end-line="90" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/env/Lib/site-packages/django/contrib/messages/api.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/error404.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -588,56 +616,77 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/teste.py" />
-    <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/dados-do-curso.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/eventos/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="99" column="27" selection-start-line="99" selection-start-column="27" selection-end-line="99" selection-end-column="27" />
+        <state relative-caret-position="179">
+          <caret line="57" column="67" lean-forward="true" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="67" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
-            <element signature="e#212#1317#0" />
-            <element signature="e#1376#1419#0" />
-            <element signature="e#1789#2538#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="61" selection-start-line="11" selection-start-column="61" selection-end-line="11" selection-end-column="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/constant/constant.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="11" lean-forward="true" selection-start-column="11" selection-end-column="56" />
+          <caret column="57" lean-forward="true" selection-start-column="57" selection-end-column="57" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/usuario/views.py">
+    <entry file="file://$PROJECT_DIR$/usuario/templates/usuario/dados-pessoais.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="101" column="51" selection-start-line="101" selection-start-column="51" selection-end-line="101" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#64#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="856">
+          <caret line="90" column="60" selection-start-line="90" selection-start-column="60" selection-end-line="90" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/error404.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/dados-do-curso.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="29" selection-start-line="16" selection-start-column="7" selection-end-line="17" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventos/templates/eventos/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="12" column="18" lean-forward="true" selection-start-line="10" selection-start-column="12" selection-end-line="12" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/usuario/templates/usuario/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="55" lean-forward="true" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/usuario/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="30" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="30" />
+        <state relative-caret-position="289">
+          <caret line="17" column="28" lean-forward="true" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/usuario/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="194" column="4" lean-forward="true" selection-start-line="194" selection-start-column="4" selection-end-line="194" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#64#0" expanded="true" />
+            <element signature="e#252#1363#0" />
+            <element signature="e#2960#4494#0" />
+            <element signature="e#6405#7320#0" />
           </folding>
         </state>
       </provider>

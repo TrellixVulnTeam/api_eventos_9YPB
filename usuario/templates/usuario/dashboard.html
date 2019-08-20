@@ -1,27 +1,29 @@
 {% extends 'base_dash.html' %}
 {% block body %}
     <main class="page-content">
-        <h3>Eventos</h3>
-        <hr>
-        {% for evento in evento_data %}
-            {% if evento.nomeStatus == "Inscrito" %}
-                <div class="col">
-                    <div class="card">
-                        <div class="card text-center">
-                            <div class="card-header"><strong>{{ evento.nomeCategoria_inscricao }}</strong></div>
+        <div class="container">
+            <div class="list-group-item disabled p-3 mb-2 bg-primary text-white" aria-disabled="true">
+                <h5>Eventos</h5>
+            </div>
+            <hr>
 
-                            <div class="card-body">
-                                <h5 class="card-title">{{ evento.nomeEvento }}</h5>
-                                <p class="card-text">Qualquer coisa</p>
-                                <a href="{% url 'listar_documento_financeiro' evento.registro evento.codEventoInscricao %}"
-                                   class="btn btn-primary"><i class="fas fa-file-invoice-dollar"></i> Documentos Financeiros</a>
+            {% for evento in evento_data %}
+                <div class="">
+                    <ul class="list-group">
+                        <li class="list-group-item mb-2">
+                            <div class="row">
+                                <div class="col col-xl-5 col-md-5">{{ evento.nomeEvento }}</div>
+                                <div class="col col-xl-5 col-md-5">{{ evento.nomeCategoria_inscricao }}</div>
+                                <div class="col col-xl-2 col-md-2">
+                                    <a href="{% url 'listar_documento_financeiro' evento.registro evento.codEventoInscricao %}">
+                                        <i class="fas fa-file-invoice-dollar fa-lg text-primary"></i>
+                                    </a>
+                                </div>
                             </div>
-
-                            <div class="card-footer text-success"><strong>{{ evento.nomeStatus }}</strong></div>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
                 </div>
-            {% endif %}
-        {% endfor %}
+            {% endfor %}
+        </div>
     </main>
 {% endblock %}

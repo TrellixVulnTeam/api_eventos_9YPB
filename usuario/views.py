@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from usuario.models import Usuario
 from .forms import UsuarioLoginForm
-from constant.constant import URLBASE
+from constant.constant import URLBASE, KEY
 import requests
 
 
@@ -21,7 +21,6 @@ def login(request):
                 header = {
                              'X-API-KEY': '7e61b6bb-6841-415f-954e-5e2ba445cc7c'
                           }
-
                 r = requests.get(url, auth=(registro, senha), headers=header)
 
                 if r.status_code == 200:
@@ -42,13 +41,13 @@ def login(request):
 def dashboard(request, registro):
     # Dados do usuario
 
-    url = URLBASE + 'eventos/usuario'
+    url = URLBASE + 'usuario/'
     usuario = Usuario.objects.get(registro=registro)
 
     header = {
-        'Authorization': usuario.token
+        'Authorization': usuario.token,
+        'X-API-KEY': KEY
     }
-
     r = requests.get(url, headers=header)
 
     if r.status_code == 200:
@@ -63,33 +62,40 @@ def dashboard(request, registro):
         usuario_data.append(usuario)
 
         # Dados do eventos
-        url = "https://apieventos.conveniar.com.br/conveniar/api/eventos/inscricoes?pagina=1&limite=50"
+        url = URLBASE + 'inscricoes?pagina=1&limite=50'
         usuario = Usuario.objects.get(registro=registro)
 
         header = {
-            'Authorization': usuario.token
+            'Authorization': usuario.token,
+            'X-API-KEY': KEY
         }
 
         r = requests.get(url, headers=header)
+
         evento_data = []
 
         for i in range(len(r.json())):
             data = r.json()[i]
-            evento = {
-                'codEvento': data['CodEvento'],
-                'nomeEvento': data['NomeEvento'],
-                'nomeCategoria_inscricao': data['NomeCategoriaInscricao'],
-                'nomeStatus': data['NomeStatus'],
-                'registro': data['NumeroInscricao'],
-                'codEventoInscricao': data['CodEventoInscricao']
-            }
 
-            evento_data.append(evento)
+            if data['NomeStatus'] == 'Inscrito':
+                evento = {
+                    'codEvento': data['CodEvento'],
+                    'nomeEvento': data['NomeEvento'],
+                    'nomeCategoria_inscricao': data['NomeCategoriaInscricao'],
+                    'nomeStatus': data['NomeStatus'],
+                    'registro': data['NumeroInscricao'],
+                    'codEventoInscricao': data['CodEventoInscricao']
+                }
+
+                evento_data.append(evento)
 
         context = {
             'usuario_data': usuario_data,
             'evento_data': evento_data
         }
+
+        print(evento_data)
+        print(usuario_data)
 
         return render(request, 'usuario/dashboard.html', context)
     else:
@@ -152,11 +158,12 @@ def eventos_cursos(request, registro):
 
 
 def listar_documento_financeiro(request, registro, codeventoinscricao):
-    url = "https://apieventos.conveniar.com.br/conveniar/api/eventos/inscricao/"+(str(codeventoinscricao))+"/documentos?pagina=1&limite=50"
+    url = URLBASE + "inscricao/"+(str(codeventoinscricao))+"/documentos?pagina=1&limite=50"
     usuario = Usuario.objects.get(registro=registro)
 
     header = {
-        'Authorization': usuario.token
+        'Authorization': usuario.token,
+        'X-API-KEY': KEY
     }
 
     r = requests.get(url, headers=header)
@@ -179,7 +186,7 @@ def listar_documento_financeiro(request, registro, codeventoinscricao):
 
         documentos_financieros.append(documentos)
 
-    url_usuario = "https://apieventos.conveniar.com.br/conveniar/api/eventos/usuario"
+    url_usuario = URLBASE + '/usuario'
 
     r = requests.get(url_usuario, headers=header)
     data = r.json()
