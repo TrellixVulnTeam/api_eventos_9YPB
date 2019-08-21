@@ -4,6 +4,7 @@ from usuario.models import Usuario
 from .forms import UsuarioLoginForm
 from constant.constant import URLBASE, KEY
 import requests
+import json
 
 
 def login(request):
@@ -19,8 +20,8 @@ def login(request):
 
             if usuario.registro == registro and senha == usuario.senha:
                 header = {
-                             'X-API-KEY': '7e61b6bb-6841-415f-954e-5e2ba445cc7c'
-                          }
+                    'X-API-KEY': '7e61b6bb-6841-415f-954e-5e2ba445cc7c'
+                }
                 r = requests.get(url, auth=(registro, senha), headers=header)
 
                 if r.status_code == 200:
@@ -103,7 +104,6 @@ def dashboard(request, registro):
 
 
 def eventos_cursos(request, registro):
-
     url = URLBASE + 'inscricoes?pagina=1&limite=50'
     usuario = Usuario.objects.get(registro=registro)
 
@@ -158,7 +158,7 @@ def eventos_cursos(request, registro):
 
 
 def listar_documento_financeiro(request, registro, codeventoinscricao):
-    url = URLBASE + "inscricao/"+(str(codeventoinscricao))+"/documentos?pagina=1&limite=50"
+    url = URLBASE + "inscricao/" + (str(codeventoinscricao)) + "/documentos?pagina=1&limite=50"
     usuario = Usuario.objects.get(registro=registro)
 
     header = {
@@ -259,15 +259,86 @@ def dados_usuario(request, registro):
 # def exibir_tela_cadatrar_inscrito(request):return render(request, 'usuario/registrar.html')
 
 
-def salvar_dados(request):
+def salvar_dados(request, registro):
+    url = URLBASE + 'usuario'
+    print(url)
+    usuario = Usuario.objects.get(registro=registro)
+    header = {
+        'Authorization': usuario.token,
+        'X-API-KEY': KEY
+    }
+
     if request.method == 'POST':
         # Dados Pessoais
-        request.POST.get('nome_completo')
-        request.POST.get('cracha')
-        request.POST.get('cpf')
-        request.POST.get('email')
-        request.POST.get('senha')
+        nome = request.POST.get('nome_completo')
+        cracha = request.POST.get('cracha')
+        cpf = request.POST.get('cpf')
+        email = request.POST.get('email')
+        senha = request.POST.get('senha')
         # request.POST.get('nome_completo')
+
+        # Enderenço
+        cep = request.POST.get('cep')
+        enderenco = request.POST.get('enderenco')
+        bairro = request.POST.get('bairro')
+        cidade = request.POST.get('cidade')
+        estado = request.POST.get('estado')
+        pais = request.POST.get('pais')
+
+        dados_usuario = {
+            "NumRegistro": registro,
+            "Nome": str(nome),
+            "Email": str(email),
+            "Senha": str(senha),
+            "Cracha": str(cracha),
+            "Documento": str(cpf),
+            "TipoDocumentoPessoa": "Pessoa física brasileira",
+            "Sexo": "M",
+            "TelefoneCelular": "",
+            "TelefoneCasa": "",
+            "TelefoneEmpresa": "",
+            "CEP": str(cep),
+            "Endereco": str(enderenco),
+            "Bairro": str(bairro),
+            "Cidade": str(cidade),
+            "Estado": str(estado),
+            "Pais": str(pais)
+        }
+
+        r = requests.put(url, header=header, data=dados_usuario)
+
+        print(r.status_code)
+        if r.status_code == 200:
+            # mensagem avisando a atualização dos dados
+            print('atualizado')
+
+    pass
+
+
+
+# def send_response(event, context, responseStatus, responseData):
+#     responseBody = {'Status': responseStatus,
+#                     'Reason': 'See the details in CloudWatch Log Stream: ' + context.log_stream_name,
+#                     'PhysicalResourceId': context.log_stream_name,
+#                     'StackId': event['StackId'],
+#                     'RequestId': event['RequestId'],
+#                     'LogicalResourceId': event['LogicalResourceId'],
+#                     'Data': responseData}
+#
+#     req = None
+#     try:
+#         req = requests.put(event['ResponseURL'], data=json.dumps(responseBody))
+#
+#         if req.status_code != 200:
+#             print(req.text)
+#             raise Exception('Recieved non 200 response while sending response to CFN.')
+#         return
+#
+#     except requests.exceptions.RequestException as e:
+#         if req != None:
+#             print(req.text)
+#         print(e)
+#         raise
 
 
 # def cadastrar_inscrito(request):

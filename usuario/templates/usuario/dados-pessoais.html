@@ -7,7 +7,7 @@
             <hr>
 
             {% for usuario in usuario_data %}
-            <form action="{% url 'salvar_dados' %}" class="form_login" method="POST">
+            <form action="{% url 'salvar_dados' usuario.registro %}" class="form_login" method="POST">
                 {% csrf_token %}
                 <div class="form-row">
                     <div class="form-group col-md-4">
@@ -65,35 +65,35 @@
                 <div class="form-row">
                     <div class="form-group col-md-2">
                         <label for="inputCEP">CEP</label>
-                        <input type="text" class="form-control" id="inputCEP" placeholder="CEP" value="{{ usuario.CEP }}">
+                        <input type="text" class="form-control" id="inputCEP" placeholder="CEP" name="cep" value="{{ usuario.CEP }}">
                     </div>
 
                     <div class="form-group col-md-6">
                         <label for="inputLogradouro">Logradouro</label>
-                        <input type="text" class="form-control" id="inputLogradouro" placeholder="Logradouro" value="{{ usuario.Endereco }}">
+                        <input type="text" class="form-control" id="inputLogradouro" placeholder="Logradouro" name="enderenco" value="{{ usuario.Endereco }}">
                     </div>
 
                     <div class="form-group col-md-4">
                         <label for="inputBairro">Bairro</label>
-                        <input type="text" class="form-control" id="inputBairro" value="{{ usuario.Bairro }}">
+                        <input type="text" class="form-control" id="inputBairro" name="bairro" value="{{ usuario.Bairro }}">
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="inputCidade">Cidade</label>
-                        <input type="text" class="form-control" id="inputCidade" value="{{ usuario.Cidade }}">
+                        <input type="text" class="form-control" id="inputCidade" name="cidade" value="{{ usuario.Cidade }}">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="inputState">Estados</label>
                         <select id="inputState" class="form-control">
-                            <option selected value="default">{{ usuario.Estado }}</option>
+                            <option selected value="default" name="estado">{{ usuario.Estado }}</option>
 {#                            <option value="estado1">...</option>#}
                         </select>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="inputPais">País</label>
-                        <input type="text" class="form-control" id="inputPais" value="{{ usuario.Pais }}">
+                        <input type="text" class="form-control" id="inputPais" name="pais" value="{{ usuario.Pais }}">
                     </div>
                 </div>
                 <hr>
