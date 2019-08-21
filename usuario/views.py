@@ -259,7 +259,18 @@ def dados_usuario(request, registro):
 # def exibir_tela_cadatrar_inscrito(request):return render(request, 'usuario/registrar.html')
 
 
-def cadastrar_inscrito(request):
+def salvar_dados(request):
     if request.method == 'POST':
-        print('informação enviada')
-    return 0
+        # Dados Pessoais
+        request.POST.get('nome_completo')
+        request.POST.get('cracha')
+        request.POST.get('cpf')
+        request.POST.get('email')
+        request.POST.get('senha')
+        # request.POST.get('nome_completo')
+
+
+# def cadastrar_inscrito(request):
+#     if request.method == 'POST':
+#         print('informação enviada')
+#     return 0
