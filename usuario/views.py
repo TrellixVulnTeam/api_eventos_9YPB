@@ -217,12 +217,13 @@ def listar_documento_financeiro(request, registro, codeventoinscricao):
 
 
 def dados_usuario(request, registro):
-    url = "https://apieventos.conveniar.com.br/conveniar/api/eventos/usuario"
+    url = URLBASE + 'usuario/'
 
     usuario = Usuario.objects.get(registro=registro)
 
     header = {
-        'Authorization': usuario.token
+        'Authorization': usuario.token,
+        'X-API-KEY': KEY
     }
 
     r = requests.get(url, headers=header)
@@ -235,9 +236,11 @@ def dados_usuario(request, registro):
         'Nome': data['Nome'],
         'Cracha': data['Cracha'],
         'Email': data['Email'],
+        'Documento': data['Documento'],
         'TelefoneCelular': data['TelefoneCelular'],
         'TelefoneCasa': data['TelefoneCasa'],
         'TelefoneEmpresa': data['TelefoneEmpresa'],
+        'CEP': data['CEP'],
         'Endereco': data['Endereco'],
         'Bairro': data['Bairro'],
         'Cidade': data['Cidade'],
