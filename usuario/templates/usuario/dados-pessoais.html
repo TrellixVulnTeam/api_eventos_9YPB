@@ -5,6 +5,16 @@
         <div class="container-fluid">
             <h2>Dados Pessoais</h2>
             <hr>
+            {% if messages %}
+                {% for message in messages %}
+                   <div class="alert alert-success" role="alert">
+                          {{ message }}
+                   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                       <span aria-hidden="true">&times;</span>
+                   </button>
+                   </div>
+                {% endfor %}
+            {% endif %}
 
             {% for usuario in usuario_data %}
             <form action="{% url 'salvar_dados' usuario.registro %}" class="form_login" method="POST">
