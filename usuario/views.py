@@ -4,7 +4,7 @@ from usuario.models import Usuario
 from .forms import UsuarioLoginForm
 from constant.constant import URLBASE, KEY
 import requests
-import json
+
 
 
 def login(request):
@@ -20,7 +20,7 @@ def login(request):
 
             if usuario.registro == registro and senha == usuario.senha:
                 header = {
-                    'X-API-KEY': '7e61b6bb-6841-415f-954e-5e2ba445cc7c'
+                    'X-API-KEY': KEY
                 }
                 r = requests.get(url, auth=(registro, senha), headers=header)
 
@@ -39,16 +39,23 @@ def login(request):
     return redirect('listar_eventos')
 
 
-def dashboard(request, registro):
-    # Dados do usuario
-
-    url = URLBASE + 'usuario/'
+def autorizacao(registro):
     usuario = Usuario.objects.get(registro=registro)
 
     header = {
         'Authorization': usuario.token,
         'X-API-KEY': KEY
     }
+    return header
+
+
+def dashboard(request, registro):
+    # Dados do usuario
+
+    url = URLBASE + 'usuario/'
+
+    header = autorizacao(registro)
+    print(header)
     r = requests.get(url, headers=header)
 
     if r.status_code == 200:
@@ -64,12 +71,8 @@ def dashboard(request, registro):
 
         # Dados do eventos
         url = URLBASE + 'inscricoes?pagina=1&limite=50'
-        usuario = Usuario.objects.get(registro=registro)
 
-        header = {
-            'Authorization': usuario.token,
-            'X-API-KEY': KEY
-        }
+        header = autorizacao(registro)
 
         r = requests.get(url, headers=header)
 
@@ -94,9 +97,6 @@ def dashboard(request, registro):
             'usuario_data': usuario_data,
             'evento_data': evento_data
         }
-
-        print(evento_data)
-        print(usuario_data)
 
         return render(request, 'usuario/dashboard.html', context)
     else:
@@ -127,7 +127,7 @@ def eventos_cursos(request, registro):
 
         evento_data.append(evento)
 
-    url_usuario = "https://apieventos.conveniar.com.br/conveniar/api/eventos/usuario"
+    url_usuario = URLBASE + "usuario"
 
     r = requests.get(url_usuario, headers=header)
     data = r.json()
@@ -155,7 +155,6 @@ def eventos_cursos(request, registro):
     }
 
     return render(request, 'usuario/lista-curso-inscrito.html', context)
-
 
 def listar_documento_financeiro(request, registro, codeventoinscricao):
     url = URLBASE + "inscricao/" + (str(codeventoinscricao)) + "/documentos?pagina=1&limite=50"
@@ -215,16 +214,9 @@ def listar_documento_financeiro(request, registro, codeventoinscricao):
 
     return render(request, 'usuario/dashboard.html', context)
 
-
 def dados_usuario(request, registro):
     url = URLBASE + 'usuario/'
-
-    usuario = Usuario.objects.get(registro=registro)
-
-    header = {
-        'Authorization': usuario.token,
-        'X-API-KEY': KEY
-    }
+    header = autorizacao(registro)
 
     r = requests.get(url, headers=header)
 
@@ -255,20 +247,14 @@ def dados_usuario(request, registro):
 
     return render(request, 'usuario/dados-pessoais.html', context)
 
-
 # def exibir_tela_cadatrar_inscrito(request):return render(request, 'usuario/registrar.html')
-
 
 def salvar_dados(request, registro):
     url = URLBASE + 'usuario'
-    print(url)
-    usuario = Usuario.objects.get(registro=registro)
-    header = {
-        'Authorization': usuario.token,
-        'X-API-KEY': KEY
-    }
+    header = autorizacao(registro)
 
     if request.method == 'POST':
+        print('entrou no post')
         # Dados Pessoais
         nome = request.POST.get('nome_completo')
         cracha = request.POST.get('cracha')
@@ -284,61 +270,38 @@ def salvar_dados(request, registro):
         cidade = request.POST.get('cidade')
         estado = request.POST.get('estado')
         pais = request.POST.get('pais')
+        tipodocumentopessoa = "Pessoa fisica brasileira"
+        estado = "Minas"
 
         dados_usuario = {
             "NumRegistro": registro,
-            "Nome": str(nome),
-            "Email": str(email),
-            "Senha": str(senha),
-            "Cracha": str(cracha),
-            "Documento": str(cpf),
-            "TipoDocumentoPessoa": "Pessoa física brasileira",
+            "Nome": nome,
+            "Email": email,
+            "Senha": senha,
+            "Cracha": cracha,
+            "Documento": cpf,
+            "TipoDocumentoPessoa": tipodocumentopessoa,
             "Sexo": "M",
             "TelefoneCelular": "",
             "TelefoneCasa": "",
             "TelefoneEmpresa": "",
-            "CEP": str(cep),
-            "Endereco": str(enderenco),
-            "Bairro": str(bairro),
-            "Cidade": str(cidade),
-            "Estado": str(estado),
-            "Pais": str(pais)
+            "CEP": cep,
+            "Endereco": enderenco,
+            "Bairro": bairro,
+            "Cidade": cidade,
+            "Estado": estado,
+            "Pais": pais
         }
 
-        r = requests.put(url, header=header, data=dados_usuario)
+        r = requests.put(url, json=dados_usuario, headers=header)
 
-        print(r.status_code)
         if r.status_code == 200:
-            # mensagem avisando a atualização dos dados
-            print('atualizado')
 
-    pass
+           messages.success(request, "Dados alterados com sucesso")
 
-
-
-# def send_response(event, context, responseStatus, responseData):
-#     responseBody = {'Status': responseStatus,
-#                     'Reason': 'See the details in CloudWatch Log Stream: ' + context.log_stream_name,
-#                     'PhysicalResourceId': context.log_stream_name,
-#                     'StackId': event['StackId'],
-#                     'RequestId': event['RequestId'],
-#                     'LogicalResourceId': event['LogicalResourceId'],
-#                     'Data': responseData}
-#
-#     req = None
-#     try:
-#         req = requests.put(event['ResponseURL'], data=json.dumps(responseBody))
-#
-#         if req.status_code != 200:
-#             print(req.text)
-#             raise Exception('Recieved non 200 response while sending response to CFN.')
-#         return
-#
-#     except requests.exceptions.RequestException as e:
-#         if req != None:
-#             print(req.text)
-#         print(e)
-#         raise
+           return redirect('dados_usuario', registro)
+        else:
+            return render(request, 'eventos/error404.html')
 
 
 # def cadastrar_inscrito(request):

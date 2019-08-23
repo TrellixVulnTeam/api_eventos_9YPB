@@ -1,4 +1,5 @@
 .idea/dictionaries/Marcos.xml
 .idea/workspace.xml
 mysqlclient-1.4.4-cp37-cp37m-win32.whl
-.idea/workspace.xml
+api_eventos/__pycache__/
+constant/__pycache__/
