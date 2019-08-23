@@ -156,6 +156,7 @@ def eventos_cursos(request, registro):
 
     return render(request, 'usuario/lista-curso-inscrito.html', context)
 
+
 def listar_documento_financeiro(request, registro, codeventoinscricao):
     url = URLBASE + "inscricao/" + (str(codeventoinscricao)) + "/documentos?pagina=1&limite=50"
     usuario = Usuario.objects.get(registro=registro)
@@ -214,6 +215,7 @@ def listar_documento_financeiro(request, registro, codeventoinscricao):
 
     return render(request, 'usuario/dashboard.html', context)
 
+
 def dados_usuario(request, registro):
     url = URLBASE + 'usuario/'
     header = autorizacao(registro)
@@ -247,7 +249,61 @@ def dados_usuario(request, registro):
 
     return render(request, 'usuario/dados-pessoais.html', context)
 
-# def exibir_tela_cadatrar_inscrito(request):return render(request, 'usuario/registrar.html')
+
+def exibir_tela_cadatrar_inscrito(request):
+    url = URLBASE + 'usuario'
+    if request.method == 'POST':
+        nome = "nome completo"
+        cracha = "nome no cracha"
+        cpf = "cpf"
+        email = request.POST.get('email')
+        senha = request.POST.get('senha')
+
+        # Enderenço
+        cep = "0000000"
+        enderenco = "enderenço"
+        bairro = "bairro"
+        cidade = "cidade"
+        estado = "estado"
+        pais = "Brasil"
+        tipodocumentopessoa = "Pessoa fisica brasileira"
+
+        dados_usuario = {
+            "Nome": nome,
+            "Email": email,
+            "Senha": senha,
+            "Cracha": cracha,
+            "Documento": cpf,
+            "TipoDocumentoPessoa": tipodocumentopessoa,
+            "Sexo": "M",
+            "TelefoneCelular": "",
+            "TelefoneCasa": "",
+            "TelefoneEmpresa": "",
+            "CEP": cep,
+            "Endereco": enderenco,
+            "Bairro": bairro,
+            "Cidade": cidade,
+            "Estado": estado,
+            "Pais": pais
+        }
+
+        header = {'X-API-KEY': KEY}
+        r = requests.post(url, json=dados_usuario, headers=header)
+
+        if r.status_code == 200:
+            data = r.json()
+            dados_usuario = {
+                'numRegistro': data['NumRegistro']
+            }
+            mensagem = "Inscrito com sucesso, seu numero de inscrição é: " + str(data['NumRegistro'])
+            messages.success(request, mensagem)
+
+            return redirect('listar_eventos')
+        else:
+            return render(request, 'eventos/error404.html')
+    else:
+        return render(request, 'usuario/registrar.html')
+
 
 def salvar_dados(request, registro):
     url = URLBASE + 'usuario'

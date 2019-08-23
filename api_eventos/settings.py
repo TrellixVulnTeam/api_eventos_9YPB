@@ -76,27 +76,27 @@ WSGI_APPLICATION = 'api_eventos.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'portal_eventos',
-#         'USER': 'root',
-#         'PASSWORD': 'Goto@123',
-#         'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
-#         'PORT': '3306',
-#     }
-# }
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'portal_eventos',
-        'USER': 'development',
-        'PASSWORD': 'senha_W123',
+        'USER': 'root',
+        'PASSWORD': 'Goto@123',
         'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
         'PORT': '3306',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'portal_eventos',
+#         'USER': 'development',
+#         'PASSWORD': 'senha_W123',
+#         'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+#         'PORT': '3306',
+#     }
+# }
 
 
 # Password validation
