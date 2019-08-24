@@ -1,3 +1,4 @@
+#from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from usuario.models import Usuario
@@ -6,38 +7,54 @@ from constant.constant import URLBASE, KEY
 import requests
 
 
-
 def login(request):
     url = URLBASE + 'oauth/token'
+    form = UsuarioLoginForm(request.POST)
+    if form.is_valid():
+        registro = form.cleaned_data['registro']
+        senha = form.cleaned_data['senha']
 
-    if request.method == 'POST':
-        form = UsuarioLoginForm(request.POST)
-        if form.is_valid():
-            registro = form.cleaned_data['registro']
-            senha = form.cleaned_data['senha']
+        # bd_registro = Usuario.objects.filter(registro=registro)
+        # bd_senha = Usuario.objects.filter(registro=senha)
+        existe_usuario = Usuario.objects.filter(registro=registro).exists()
 
+        if existe_usuario:
             usuario = get_object_or_404(Usuario, registro=registro)
-
-            if usuario.registro == registro and senha == usuario.senha:
-                header = {
-                    'X-API-KEY': KEY
-                }
+            # verificar se a senha é a verdadeira
+            if usuario.registro == registro and usuario.senha == senha:
+                header = {'X-API-KEY': KEY}
                 r = requests.get(url, auth=(registro, senha), headers=header)
 
                 if r.status_code == 200:
                     usuario.token = r.json()['AccessToken']
                     usuario.save()
-
-                q = Usuario.objects.filter(registro=usuario.registro)
-                if q:
                     return redirect('dashboard', usuario.registro)
+                else:
+                    return render(request, 'eventos/error404.html')
             else:
-                # ERROR = 40
-                # messages.add_message(request, ERROR, 'A serious error occurred.')
+                mensagem = "O numero de registro ou a senha está incorreta"
+                messages.warning(request, mensagem)
                 return redirect('listar_eventos')
+        else:
+            usuario = Usuario()
+            usuario.registro = registro
+            usuario.senha = senha
 
-    return redirect('listar_eventos')
+            header = {'X-API-KEY': KEY}
+            r = requests.get(url, auth=(registro, senha), headers=header)
+            print(r.json())
+            print(r.status_code)
 
+            if r.status_code == 200:
+                usuario.token = r.json()['AccessToken']
+                usuario.save()
+                return redirect('dashboard', usuario.registro)
+            elif r.status_code == 401:
+                mensagem = "O numero de registro ou a senha está incorreta"
+                messages.warning(request, mensagem)
+                return redirect('listar_eventos')
+            else:
+                return render(request, 'eventos/error404.html')
 
 def autorizacao(registro):
     usuario = Usuario.objects.get(registro=registro)
@@ -48,14 +65,12 @@ def autorizacao(registro):
     }
     return header
 
-
 def dashboard(request, registro):
     # Dados do usuario
 
     url = URLBASE + 'usuario/'
 
     header = autorizacao(registro)
-    print(header)
     r = requests.get(url, headers=header)
 
     if r.status_code == 200:
@@ -105,17 +120,17 @@ def dashboard(request, registro):
 
 def eventos_cursos(request, registro):
     url = URLBASE + 'inscricoes?pagina=1&limite=50'
-    usuario = Usuario.objects.get(registro=registro)
 
-    header = {
-        'Authorization': usuario.token
-    }
+    header = autorizacao(registro)
 
     r = requests.get(url, headers=header)
     evento_data = []
 
-    for i in range(len(r.json())):
-        data = r.json()[i]
+    print(r.json())
+
+    # Colentado todos os eventos
+    for item in range(len(r.json())):
+        data = r.json()[item]
         evento = {
             'codEvento': data['CodEvento'],
             'CodEventoInscricao': data['CodEventoInscricao'],
@@ -124,7 +139,6 @@ def eventos_cursos(request, registro):
             'nomeStatus': data['NomeStatus'],
             'registro': data['NumeroInscricao'],
         }
-
         evento_data.append(evento)
 
     url_usuario = URLBASE + "usuario"
@@ -133,6 +147,7 @@ def eventos_cursos(request, registro):
     data = r.json()
     usuario_data = []
 
+    # Colentado dados do usuario
     usuario = {
         'registro': data['NumRegistro'],
         'Nome': data['Nome'],
@@ -358,9 +373,3 @@ def salvar_dados(request, registro):
            return redirect('dados_usuario', registro)
         else:
             return render(request, 'eventos/error404.html')
-
-
-# def cadastrar_inscrito(request):
-#     if request.method == 'POST':
-#         print('informação enviada')
-#     return 0

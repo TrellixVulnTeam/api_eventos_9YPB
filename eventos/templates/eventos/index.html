@@ -3,6 +3,18 @@
 {% block main %}
     <div class="container">
         <section id="titulos" class="mt-5">
+            {% if messages %}
+                {% for message in messages %}
+                    <div id="alert">
+                        <div class="alert alert-warning" role="alert">
+                            {{ message }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
             <h6>Bem vindo ao Portal de Eventos, Cursos e Serviços </h6>
             <p><em>Faça sua inscrição nos eventos e cursos ou solicite os serviços oferecidos pela Fundação.</em></p>
             <hr>
@@ -11,19 +23,6 @@
             <div class="list-group-item disabled p-3 mb-2 bg-primary text-white" aria-disabled="true">
                 <h5>Listas de Eventos, Cursos e Serviços</h5>
             </div>
-            {% if messages %}
-                    {% for message in messages %}
-                        <div id="alert">
-                            <div class="alert alert-success" role="alert">
-                                {{ message }}
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                        </div>
-                    {% endfor %}
-                {% endif %}
-
                 <div class="">
                     <ul class="list-group">
                         {% for evento in eventos_data %}

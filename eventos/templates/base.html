@@ -46,7 +46,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{% url 'auth_login' %}" class="form_login" method="post">
+                <form autocomplete="off" action="{% url 'auth_login' %}" class="form_login" method="post">
                     {% csrf_token %}
                     {{ form.as_p }}
                     <div class="modal-footer">
@@ -79,6 +79,7 @@
 <script src="{% static 'js/js/bootstrap.bundle.js' %}"></script>
 <script src="{% static 'js/js/bootstrap.min.js' %}"></script>
 <script src="{% static 'js/js/modal.js' %}"></script>
+<script src="{% static 'js/usuario/dados-usuarios.js' %}"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </body>
 </html>

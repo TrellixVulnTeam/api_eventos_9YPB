@@ -46,62 +46,21 @@
                     <li class="header-menu">
                         <span>Curso, Serviços e Eventos </span>
                     </li>
-                    <li class="sidebar-dropdown">
+                    <li class="">
                         {% for usuario in usuario_data %}
-                        <a href="{% url 'eventos_cursos' usuario.registro %}"><i id="icone-curso" class="fas fa-chalkboard-teacher"></i><span>Todos Eventos</span></a>
+                        <a href="{% url 'dashboard' usuario.registro %}">
+                            <i id="icone-curso" class="fas fa-chalkboard-teacher"></i>
+                            <span>Eventos Atuais </span></a>
                         {%  endfor %}
-                        <!--<div class="sidebar-submenu">
-                            <ul>
-                                <li>
-                                    <a href="#">Curso 1</a>
-                                </li>
-                                <li>
-                                    <a href="#">Curso 2</a>
-                                </li>
-                                <li>
-                                    <a href="#">Curso 3</a>
-                                </li>
-                            </ul>
-                        </div>!-->
                     </li>
-                    <!--<li class="sidebar-dropdown">
-                        <a href="#">
-                            <i class="fas fa-calendar-check"></i>
-                            <span>Eventos</span>
-                        </a>
-                        <div class="sidebar-submenu">
-                            <ul>
-                                <li>
-                                    <a href="#">Eventos 1</a>
-                                </li>
-                                <li>
-                                    <a href="#">Eventos 2</a>
-                                </li>
-                                <li>
-                                    <a href="#">Eventos 3</a>
-                                </li>
-                            </ul>
-                        </div>
+
+                    <li class="">
+                        {% for usuario in usuario_data %}
+                        <a href="{% url 'eventos_cursos' usuario.registro %}">
+                            <i id="icone-curso" class="fas fa-chalkboard-teacher"></i>
+                            <span>Todos Eventos</span></a>
+                        {%  endfor %}
                     </li>
-                    <li class="sidebar-dropdown">
-                        <a href="#">
-                            <i class="fas fa-cogs"></i>
-                            <span>Serviços</span>
-                        </a>
-                        <div class="sidebar-submenu">
-                            <ul>
-                                <li>
-                                    <a href="#">Serviços 1</a>
-                                </li>
-                                <li>
-                                    <a href="#">Serviços 2</a>
-                                </li>
-                                <li>
-                                    <a href="#">Serviços 3</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>!-->
 
                     <li class="header-menu"><span>Dados Pessoais</span></li>
                     <li>
