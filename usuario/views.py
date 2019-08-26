@@ -1,4 +1,4 @@
-#from django.contrib.auth.decorators import login_required
+# from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from usuario.models import Usuario
@@ -56,6 +56,7 @@ def login(request):
             else:
                 return render(request, 'eventos/error404.html')
 
+
 def autorizacao(registro):
     usuario = Usuario.objects.get(registro=registro)
 
@@ -64,6 +65,7 @@ def autorizacao(registro):
         'X-API-KEY': KEY
     }
     return header
+
 
 def dashboard(request, registro):
     # Dados do usuario
@@ -368,8 +370,10 @@ def salvar_dados(request, registro):
 
         if r.status_code == 200:
 
-           messages.success(request, "Dados alterados com sucesso")
+            messages.success(request, "Dados alterados com sucesso")
 
-           return redirect('dados_usuario', registro)
+            return redirect('dados_usuario', registro)
         else:
             return render(request, 'eventos/error404.html')
+    else:
+        return render(request, 'eventos/error404.html')

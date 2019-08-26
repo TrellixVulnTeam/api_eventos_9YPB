@@ -19,7 +19,8 @@
             {% endif %}
 
             {% for usuario in usuario_data %}
-            <form action="{% url 'salvar_dados' usuario.registro %}" class="form_login" method="POST">
+            <form action="{% url 'salvar_dados' usuario.registro %}" class="form_login" method="POST"
+                  id="form-dados-pessoais" autocomplete="off">
                 {% csrf_token %}
                 <div class="form-row">
                     <div class="form-group col-md-4">
@@ -63,7 +64,7 @@
                     {% else %}
                         <div class="form-group col-md-4">
                             <label for="inputGenero">Genero</label>
-                            <select name="inputGenero" class="form-control">
+                            <select name="inputGenero" id="inputGenero" class="form-control">
                                 <option>Escolha seu gênero</option>
                                 <option>Masculino</option>
                                 <option selected>Feminino</option>
@@ -83,12 +84,16 @@
 
                     <div class="form-group col-md-6">
                         <label for="inputLogradouro">Logradouro</label>
-                        <input type="text" class="form-control" id="inputLogradouro" placeholder="Logradouro" name="enderenco" value="{{ usuario.Endereco }}">
+                        <input type="text" class="form-control" id="inputLogradouro"
+                               placeholder="Logradouro" name="enderenco" value="{{ usuario.Endereco }}"
+                               data-cep="logradouro"
+                        >
                     </div>
 
                     <div class="form-group col-md-4">
                         <label for="inputBairro">Bairro</label>
-                        <input type="text" class="form-control" id="inputBairro" name="bairro" value="{{ usuario.Bairro }}">
+                        <input type="text" class="form-control" id="inputBairro" name="bairro"
+                               data-cep="bairro" value="{{ usuario.Bairro }}">
                     </div>
                 </div>
 
@@ -99,10 +104,7 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label for="inputState">Estados</label>
-                        <select id="inputState" class="form-control">
-                            <option selected value="default" name="estado">{{ usuario.Estado }}</option>
-{#                            <option value="estado1">...</option>#}
-                        </select>
+                        <input type="text" class="form-control" id="inputState" name="estado" value="{{ usuario.Estado }}">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="inputPais">País</label>
@@ -112,7 +114,7 @@
                 <hr>
 
                 <a href="{% url 'dashboard' usuario.registro %}" class="btn btn-secondary">Voltar</a>
-                <button type="submit" class="btn btn-primary">Salvar alterações</button>
+                <button type="submit" class="btn btn-primary" id="salvar-alteracoes" >Salvar alterações</button>
 
                 {% endfor %}
             </form>
