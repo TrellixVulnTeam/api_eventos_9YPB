@@ -344,7 +344,7 @@ def salvar_dados(request, registro):
         estado = request.POST.get('estado')
         pais = request.POST.get('pais')
         tipodocumentopessoa = "Pessoa fisica brasileira"
-        estado = "Minas"
+        #estado = "Minas"
 
         dados_usuario = {
             "NumRegistro": registro,

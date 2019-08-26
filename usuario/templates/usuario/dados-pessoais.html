@@ -1,4 +1,5 @@
 {% extends 'base_dash.html' %}
+{% load static %}
 {% block body %}
     <!-- sidebar-wrapper  -->
     <main class="page-content">
@@ -18,6 +19,10 @@
                 {% endfor %}
             {% endif %}
 
+{#            <div class="center">#}
+{#                <img src="{% static 'img/spinner.gif' %}" alt="Spinner" id="spinner">#}
+{#            </div>#}
+
             {% for usuario in usuario_data %}
             <form action="{% url 'salvar_dados' usuario.registro %}" class="form_login" method="POST"
                   id="form-dados-pessoais" autocomplete="off">
@@ -35,7 +40,8 @@
 
                     <div class="form-group col-md-4">
                         <label for="inputCPF">CPF</label>
-                        <input type="text" class="form-control" id="inputCPF" placeholder="CPF" name="cpf" value="{{ usuario.Documento }}">
+                        <input type="text" class="form-control" id="inputCPF" placeholder="CPF" name="cpf"
+                               value="{{ usuario.Documento }}" maxlength="11" >
                         <small id="inputCPF" class="form-text text-muted">Somente numeros</small>
                     </div>
 
@@ -79,7 +85,8 @@
                 <div class="form-row">
                     <div class="form-group col-md-2">
                         <label for="inputCEP">CEP</label>
-                        <input type="text" class="form-control" id="inputCEP" placeholder="CEP" name="cep" value="{{ usuario.CEP }}">
+                        <input type="text" class="form-control" id="inputCEP" placeholder="CEP" name="cep"
+                               value="{{ usuario.CEP }}" maxlength="8">
                     </div>
 
                     <div class="form-group col-md-6">
