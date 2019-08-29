@@ -1,25 +1,25 @@
 $(function ($) {
-   animacaoAlertAlteracaoDadosUsuario();
-   animacaoAlertCadastroUsuario();
-   $('#spinner').toggle();
-   bloquear_formulario_dados_pessoais();
+   //animacaoAlertAlteracaoDadosUsuario();
+   //animacaoAlertCadastroUsuario();
+   //$('#spinner').toggle();
+   //bloquear_formulario_dados_pessoais();
    somenteNumeros();
    consultaCep();
 
 
 });
 
-function animacaoAlertAlteracaoDadosUsuario() {
-     $("#alert").fadeTo(2000, 500).slideUp().slideUp(500, function () {
-        $('.alert-success').slideUp(4500);
-    })
-}
+// function animacaoAlertAlteracaoDadosUsuario() {
+//      $("#alert").fadeTo(2000, 500).slideUp().slideUp(500, function () {
+//         $('.alert-success').slideUp(4500);
+//     })
+// }
 
-function animacaoAlertCadastroUsuario() {
-    $("#cadastro").fadeTo(2000, 500).slideUp().slideUp(500, function () {
-        $('#cadastro').slideUp(6000)
-    })
-}
+// function animacaoAlertCadastroUsuario() {
+//     $("#cadastro").fadeTo(2000, 500).slideUp().slideUp(500, function () {
+//         $('#cadastro').slideUp(6000)
+//     })
+// }
 
 
 
@@ -59,43 +59,43 @@ function somenteNumeros() {
       });
 }
 
-function bloquear_formulario_dados_pessoais(){
-    formulario.on('submit', function (e) {
-
-        //stop submitting the form to see the disabled button effect
-        //e.preventDefault();
-
-        //disable the submit button
-        // $("#spinner").toggle();
-        // $("#salvar-alteracoes").attr("disabled", true);
-
-        //disable formulario
-        // $("#inputNome").attr("disabled", true);
-        // $("#inputCracha").attr("disabled", true);
-        // $("#inputCPF").attr("disabled", true);
-        // $("#inputEmail4").attr("disabled", true);
-        // $("#inputPass").attr("disabled", true);
-        // $("#inputGenero").attr("disabled", true);
-        //
-        // $("#inputCEP").attr("disabled", true);
-        // $("#inputLogradouro").attr("disabled", true);
-        // $("#inputBairro").attr("disabled", true);
-        // $("#inputCidade").attr("disabled", true);
-        // $("#inputState").attr("disabled", true);
-        // $("#inputPais").attr("disabled", true);
-
-        setInterval(function() {
-              e.preventDefault();
-
-              $("#spinner").toggle();
-              $("#inputNome").attr("disabled", true);
-
-
-
-            }, 1000);
-
-                });
-}
+// function bloquear_formulario_dados_pessoais(){
+//     formulario.on('submit', function (e) {
+//
+//         //stop submitting the form to see the disabled button effect
+//         //e.preventDefault();
+//
+//         //disable the submit button
+//         // $("#spinner").toggle();
+//         // $("#salvar-alteracoes").attr("disabled", true);
+//
+//         //disable formulario
+//         // $("#inputNome").attr("disabled", true);
+//         // $("#inputCracha").attr("disabled", true);
+//         // $("#inputCPF").attr("disabled", true);
+//         // $("#inputEmail4").attr("disabled", true);
+//         // $("#inputPass").attr("disabled", true);
+//         // $("#inputGenero").attr("disabled", true);
+//         //
+//         // $("#inputCEP").attr("disabled", true);
+//         // $("#inputLogradouro").attr("disabled", true);
+//         // $("#inputBairro").attr("disabled", true);
+//         // $("#inputCidade").attr("disabled", true);
+//         // $("#inputState").attr("disabled", true);
+//         // $("#inputPais").attr("disabled", true);
+//
+//         setInterval(function() {
+//               e.preventDefault();
+//
+//               $("#spinner").toggle();
+//               $("#inputNome").attr("disabled", true);
+//
+//
+//
+//             }, 1000);
+//
+//                 });
+// }
 
 
 
