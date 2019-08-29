@@ -1,5 +1,5 @@
 $(function ($) {
-   //animacaoAlertAlteracaoDadosUsuario();
+   animacaoAlertAlteracaoDadosUsuario();
    //animacaoAlertCadastroUsuario();
    //$('#spinner').toggle();
    //bloquear_formulario_dados_pessoais();
@@ -9,11 +9,11 @@ $(function ($) {
 
 });
 
-// function animacaoAlertAlteracaoDadosUsuario() {
-//      $("#alert").fadeTo(2000, 500).slideUp().slideUp(500, function () {
-//         $('.alert-success').slideUp(4500);
-//     })
-// }
+function animacaoAlertAlteracaoDadosUsuario() {
+     $("#alert-dados-usuario").fadeTo(2000, 500).slideUp().slideUp(500, function () {
+        $('.alert-success').slideUp(4500);
+    })
+}
 
 // function animacaoAlertCadastroUsuario() {
 //     $("#cadastro").fadeTo(2000, 500).slideUp().slideUp(500, function () {
