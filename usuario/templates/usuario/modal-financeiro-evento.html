@@ -1,6 +1,32 @@
-{% extends 'usuario/dashboard.html' %}
+{% extends 'base_dash.html' %}
+{% block body %}
+<main class="page-content">
+    <div class="container">
+        <div class="list-group-item disabled p-3 mb-2 bg-primary text-white" aria-disabled="true">
+            <h5>Eventos</h5>
+        </div>
+        <hr>
 
-<!-- Modal de documento financiero-->
+        {% for evento in evento_data %}
+            <div class="">
+                <ul class="list-group">
+                    <li class="list-group-item mb-2">
+                        <div class="row">
+                            <div class="col col-xl-5 col-md-5">{{ evento.nomeEvento }}</div>
+                            <div class="col col-xl-5 col-md-5">{{ evento.nomeCategoria_inscricao }}</div>
+                            <div class="col col-xl-2 col-md-2">
+                                <a href="{% url 'listar_documento_financeiro' evento.registro evento.codEventoInscricao %}"
+                                    class="nav-link" id="documento_financeiro" >
+                                    <i class="fas fa-file-invoice-dollar fa-lg text-primary"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        {% endfor %}
+    </div>
+
 <div class="modal fade" id="modal_doc_financiero" tabindex="-1" role="dialog" aria-labelledby="modalLoginLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -55,9 +81,12 @@
                      </table>
                     </div>
                 </div>
-                </form>
             </div>
 
         </div>
     </div>
 </div>
+
+</main>
+{% endblock %}
+<!-- Modal de documento financiero-->
