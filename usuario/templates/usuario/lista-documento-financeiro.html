@@ -4,9 +4,14 @@
     <main class="page-content">
 
         <div class="row">
-            <div class="col">
-                <h3>Documentos Financeiros</h3>
+            <div class="col table-responsive-sm">
+                <div class="list-group-item disabled p-3 mb-2 bg-primary text-white" aria-disabled="true">
+                    <h5>Documento Financeiros</h5>
+                </div>
                 <hr>
+                {% for usuario in usuario_data %}
+                    <a class="btn btn-primary btn-sm float-right mb-3" href="{% url 'dashboard' usuario.registro %}" role="button">Voltar</a>
+                {% endfor %}
                 <table class="table table-bordered">
                 <thead>
                 <tr>
@@ -16,6 +21,7 @@
                     <th scope="col">Valor</th>
                     <th scope="col">Valor Pago</th>
                     <th scope="col">Tipo Pagamento</th>
+                    <th scope="col">Pagar</th>
                     <th scope="col">Status</th>
                 </tr>
                 </thead>
@@ -40,6 +46,11 @@
                     {% endif %}
 
                     <td>{{ documento.NomeTipoPagamento }}</td>
+                    {% if documento.NomeStatus == 'Aberto' %}
+                        <td class="text-center"><a href=""><i class="fas fa-dollar-sign text-success fa-lg"></i></a></td>
+                    {% elif documento.NomeStatus == 'Liquidado' %}
+                        <td class="text-center"><a href=""><i class="fas fas fa-check text-success fa-lg"></i></a></td>
+                    {% endif %}
                     <td>{{ documento.NomeStatus }}</td>
                  <tr>
                 {% endfor %}

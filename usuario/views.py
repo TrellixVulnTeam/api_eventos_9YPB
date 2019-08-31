@@ -6,6 +6,8 @@ from .forms import UsuarioLoginForm
 from constant.constant import URLBASE, KEY
 import requests
 
+from constant.datas import formatar_data
+
 
 def login(request):
     url = URLBASE + 'oauth/token'
@@ -176,19 +178,19 @@ def eventos_cursos(request, registro):
 
 def listar_documento_financeiro(request, registro, codeventoinscricao):
     url = URLBASE + "inscricao/" + (str(codeventoinscricao)) + "/documentos?pagina=1&limite=50"
-    usuario = Usuario.objects.get(registro=registro)
 
-    header = {
-        'Authorization': usuario.token,
-        'X-API-KEY': KEY
-    }
+    header =  autorizacao(registro)
 
     r = requests.get(url, headers=header)
 
     documentos_financieros = []
 
+    print(r.json())
+
     for i in range(len(r.json())):
         data = r.json()[i]
+        if data['DataPagamento'] is not None:
+            data['DataPagamento'] = formatar_data(data['DataPagamento'])
         documentos = {
             'CodDocumento': data['CodDocumento'],
             'Parcela': data['Parcela'],
@@ -230,7 +232,7 @@ def listar_documento_financeiro(request, registro, codeventoinscricao):
         'documentos_financieros': documentos_financieros
     }
 
-    return render(request, 'usuario/dashboard.html', context)
+    return render(request, 'usuario/lista-documento-financeiro.html', context)
 
 
 def dados_usuario(request, registro):

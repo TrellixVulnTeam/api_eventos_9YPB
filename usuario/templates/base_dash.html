@@ -50,7 +50,7 @@
                     <li class="">
                         {% for usuario in usuario_data %}
                         <a href="{% url 'dashboard' usuario.registro %}">
-                            <i id="icone-curso" class="fas fa-chalkboard-teacher"></i>
+                            <i id="icone-curso" class="fas fa-ticket-alt"></i>
                             <span>Eventos Atuais </span></a>
                         {%  endfor %}
                     </li>
@@ -67,19 +67,13 @@
                     <li>
                         {% for usuario in usuario_data %}
                         <a href="{% url 'dados_usuario' usuario.registro %}">
-                            <i class="fa fa-book"></i>
+                            <i class="far fa-address-card"></i>
                             <span>Dados Pessoais</span>
                         </a>
                         {% endfor %}
                     </li>
 
                     <li class="header-menu"><span>Sistema</span></li>
-                    <li>
-                        <a href="#">
-                            <i class="far fa-bell"></i>
-                        <span>Notificação</span>
-                        </a>
-                    </li>
                     <li>
                         <a href="{% url 'listar_eventos' %}">
                             <i class="fas fa-sign-out-alt"></i>
@@ -104,7 +98,6 @@
         {% block scritpsJS  %}
             <script src="{% static 'js/js/jquery-3.4.0.js' %}"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
             <script src="{% static 'js/js/dash.js' %}"></script>

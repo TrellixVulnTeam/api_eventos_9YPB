@@ -65,12 +65,12 @@
                                 <td> {{ documento.DataPagamento }}</td>
                             {% endif %}
 
-                            <td>R$ {{ documento.Valor |intcomma }}</td>
+                            <td>R$ {{ documento.Valor  }}</td>
 
                             {% if documento.ValorPago is None %}
                                 <td> R$ </td>
                              {% else %}
-                                <td> R$ {{ documento.ValorPago|intcomma }}</td>
+                                <td> R$ {{ documento.ValorPago }}</td>
                             {% endif %}
 
                             <td>{{ documento.NomeTipoPagamento }}</td>
