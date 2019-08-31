@@ -44,8 +44,6 @@ def login(request):
 
             header = {'X-API-KEY': KEY}
             r = requests.get(url, auth=(registro, senha), headers=header)
-            print(r.json())
-            print(r.status_code)
 
             if r.status_code == 200:
                 usuario.token = r.json()['AccessToken']
@@ -130,8 +128,6 @@ def eventos_cursos(request, registro):
     r = requests.get(url, headers=header)
     evento_data = []
 
-    print(r.json())
-
     # Colentado todos os eventos
     for item in range(len(r.json())):
         data = r.json()[item]
@@ -184,8 +180,6 @@ def listar_documento_financeiro(request, registro, codeventoinscricao):
     r = requests.get(url, headers=header)
 
     documentos_financieros = []
-
-    print(r.json())
 
     for i in range(len(r.json())):
         data = r.json()[i]
@@ -329,7 +323,6 @@ def salvar_dados(request, registro):
     header = autorizacao(registro)
 
     if request.method == 'POST':
-        print('entrou no post')
         # Dados Pessoais
         nome = request.POST.get('nome_completo')
         cracha = request.POST.get('cracha')
