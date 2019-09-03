@@ -94,30 +94,34 @@ def dashboard(request, registro):
         r = requests.get(url, headers=header)
 
         evento_data = []
+        quant_eventos = len(r.json())
+        print(quant_eventos)
+        if quant_eventos > 0:
+            for i in range(len(r.json())):
+                data = r.json()[i]
 
-        for i in range(len(r.json())):
-            data = r.json()[i]
+                if data['NomeStatus'] == 'Inscrito':
+                    evento = {
+                        'codEvento': data['CodEvento'],
+                        'nomeEvento': data['NomeEvento'],
+                        'nomeCategoria_inscricao': data['NomeCategoriaInscricao'],
+                        'nomeStatus': data['NomeStatus'],
+                        'registro': data['NumeroInscricao'],
+                        'codEventoInscricao': data['CodEventoInscricao']
+                    }
 
-            if data['NomeStatus'] == 'Inscrito':
-                evento = {
-                    'codEvento': data['CodEvento'],
-                    'nomeEvento': data['NomeEvento'],
-                    'nomeCategoria_inscricao': data['NomeCategoriaInscricao'],
-                    'nomeStatus': data['NomeStatus'],
-                    'registro': data['NumeroInscricao'],
-                    'codEventoInscricao': data['CodEventoInscricao']
+                    evento_data.append(evento)
+
+                context = {
+                    'usuario_data': usuario_data,
+                    'evento_data': evento_data
                 }
 
-                evento_data.append(evento)
+                return render(request, 'usuario/dashboard.html', context)
+        else:
+            return redirect('listar_cursos_ofertas_dash', registro)
+    return render(request, 'eventos/error404.html')
 
-        context = {
-            'usuario_data': usuario_data,
-            'evento_data': evento_data
-        }
-
-        return render(request, 'usuario/dashboard.html', context)
-    else:
-        return render(request, 'eventos/error404.html')
 
 
 def eventos_cursos(request, registro):
@@ -372,3 +376,56 @@ def salvar_dados(request, registro):
             return render(request, 'eventos/error404.html')
     else:
         return render(request, 'eventos/error404.html')
+
+
+def listar_cursos_ofertas_dash(request, registro):
+    url = URLBASE + '?pagina=1&limite=50'
+
+    headers = {'X-API-KEY': '7e61b6bb-6841-415f-954e-5e2ba445cc7c'}
+    r = requests.get(url, headers=headers)
+
+    eventos_data = []
+
+    if r.status_code == 200:
+        for item in range(len(r.json())):
+            data = r.json()[item]
+            eventos = {
+                'codEvento': data['CodEvento'],
+                'nomeEvento': data['NomeEvento'],
+                'nomeConvenio': data['NomeConvenio'],
+                'categoria': data['Categoria'],
+                'situacao': data['Situacao'],
+                'dataInicio': data['DataInicio'],
+                'dataFim': data['DataFim'],
+                'numeroVagas': data['NumeroVagas']
+            }
+            eventos_data.append(eventos)
+    else:
+        return render(request, 'eventos/error404.html')
+
+
+    url = URLBASE + 'usuario/'
+
+    header = autorizacao(registro)
+    r = requests.get(url, headers=header)
+
+    usuario_data = []
+
+    if r.status_code == 200:
+        data = r.json()
+
+        usuario = {
+            'Nome': data['Nome'],
+            'registro': data['NumRegistro']
+        }
+
+        usuario_data.append(usuario)
+    else:
+        return render(request, 'eventos/error404.html')
+
+    context = {
+        'eventos_data': eventos_data,
+        'usuario_data': usuario_data
+    }
+
+    return render(request, 'usuario/ofertas.html', context)

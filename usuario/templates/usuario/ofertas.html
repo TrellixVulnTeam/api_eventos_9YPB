@@ -1,0 +1,46 @@
+{% extends "base_dash.html" %}
+
+{% block body %}
+    <main class="page-content">
+    <div class="container">
+        <div class="list-group-item disabled p-3 mb-2 bg-primary text-white" aria-disabled="true">
+            <h5>Eventos em ofertas</h5>
+        </div>
+        <hr>
+        <div class="">
+            <ul class="list-group">
+                {% for evento in eventos_data %}
+                    {% if evento.situacao == "Em oferta" %}
+                        <li class="list-group-item mb-2">
+                            <div class="row">
+
+                                <div class="col col-xl-1 col-md-1">
+                                    <a href="{% url 'eventos_dados_ofertas' evento.codEvento %}">
+                                        <i class="fa fa-sign-in-alt fa-lg"></i>
+                                    </a>
+                                </div>
+
+                                <div class="col col-xl-7 col-md-7">{{ evento.nomeEvento }}</div>
+
+                                {% if evento.numeroVagas %}
+                                    <div class="col col-xl-2 col-md-2">
+                                        <span class="badge badge-success">
+                                            Números de vagas: {{ evento.numeroVagas }}
+                                        </span>
+                                    </div>
+                                {% else %}
+                                    <div class="col col-xl-2 col-md-2">
+                                        <span class="badge badge-warning">
+                                            Números de vagas não informadas
+                                        </span>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+             </ul>
+        </div>
+    </div>
+    </main>
+{% endblock %}

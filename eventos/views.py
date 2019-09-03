@@ -7,7 +7,6 @@ import datetime
 
 
 def listar_eventos(request):
-    # url = 'https://apieventos.conveniar.com.br/conveniar/api/eventos?pagina=1&limite=50'
     url = URLBASE + '?pagina=1&limite=50'
 
     headers = {'X-API-KEY': '7e61b6bb-6841-415f-954e-5e2ba445cc7c'}

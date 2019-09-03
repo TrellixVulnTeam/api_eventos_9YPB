@@ -47,19 +47,28 @@
                     <li class="header-menu">
                         <span>Curso, Serviços e Eventos </span>
                     </li>
+
+                    <li class="">
+                        {% for usuario in usuario_data %}
+                        <a href="{% url 'listar_cursos_ofertas_dash' usuario.registro %}">
+                            <i id="icone-curso" class="fas fa-ticket-alt"></i>
+                            <span>Eventos em ofertas </span></a>
+                        {%  endfor %}
+                    </li>
+
                     <li class="">
                         {% for usuario in usuario_data %}
                         <a href="{% url 'dashboard' usuario.registro %}">
-                            <i id="icone-curso" class="fas fa-ticket-alt"></i>
-                            <span>Eventos Atuais </span></a>
+                            <i id="icone-curso" class="fas fa-clipboard-check"></i>
+                            <span>Eventos atuais </span></a>
                         {%  endfor %}
                     </li>
 
                     <li class="">
                         {% for usuario in usuario_data %}
                         <a href="{% url 'eventos_cursos' usuario.registro %}">
-                            <i id="icone-curso" class="fas fa-chalkboard-teacher"></i>
-                            <span>Todos Eventos</span></a>
+                            <i id="icone-curso" class="fas fa-history"></i>
+                            <span>Histório de inscrições</span></a>
                         {%  endfor %}
                     </li>
 

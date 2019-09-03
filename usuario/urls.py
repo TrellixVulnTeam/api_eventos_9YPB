@@ -7,6 +7,7 @@ urlpatterns = [
     # Usuario
     url(r'^auth/login$', views.login, name='auth_login'),
     url(r'^dashboard/(?P<registro>[\d]+)$', views.dashboard, name='dashboard'),
+    url(r'^dashboard/(?P<registro>[\d]+)/ofertas$', views.listar_cursos_ofertas_dash, name='listar_cursos_ofertas_dash'),
     url(r'^dados-usuario/(?P<registro>[\d]+)$', views.dados_usuario, name='dados_usuario'),
     url(r'^salvar-dados-usuario/(?P<registro>[\d]+)$', views.salvar_dados, name='salvar_dados'),
 
